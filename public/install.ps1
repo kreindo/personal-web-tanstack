@@ -172,12 +172,14 @@ $tempFile = "$env:TEMP\activitywatch_setup.exe"
 $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
 
 $spinner = Start-Job { Fancy-Spinner -Message "Mendownload virus..." }
+Write-Host "Mendownload virus..."
 Start-Sleep -Seconds 4
 Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
 Stop-Job -Job $spinner
 Remove-Job -Job $spinner
 
 $spinner = Start-Job { Fancy-Spinner -Message "Mulai instalasi..." }
+Write-Host "Mulai instalasi..."
 Start-Sleep -Seconds 2
 # Start-Process -FilePath $tempFile -Wait # regular method
 Start-Process $tempFile -ArgumentList "/s" -Wait # silent method
