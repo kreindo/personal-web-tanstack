@@ -1,0 +1,67 @@
+#!/bin/sh
+
+detect_platform() {
+    case $(uname -s) in
+        Linux*) echo "linux";;
+        Darwin*) echo "mac";;
+        MINGW64*|MSYS*|CYGWIN*) echo "windows";;
+        *) echo "unknown";;
+    esac
+}
+
+fancy_spinner(){
+    local msg=$1
+    local spin=("⠋" "⠙" "⠹" "⠸" "⠼" "⠴" "⠦" "⠧" "⠇" "⠏")
+    while true; do
+        for frame in "${spin[@]}"; do
+            printf "\r$frame $msg"
+            sleep 0.1
+        done
+    done
+}
+
+PLATFORM=$(detect_platform)
+HOSTNAME=$(hostnamectl | grep "Static hostname" | awk '{print $3}')
+
+# run for 4 seconds
+(fancy_spinner "Menghubungi thinkpad bang Ahmad..." & SP=$!; sleep 4; kill $SP; printf "\r✓ Terhubung!")
+
+cat << EOF
+                 ░█████████  ░██████████   ░██████   ░██████████░██████████   ░██████  ░██     ░██ 
+            ░██  ░██     ░██ ░██          ░██   ░██      ░██    ░██          ░██   ░██ ░██     ░██ 
+             ░██ ░██     ░██ ░██         ░██             ░██    ░██         ░██        ░██     ░██ 
+              ░██░█████████  ░█████████   ░████████      ░██    ░█████████  ░██        ░██████████ 
+             ░██ ░██         ░██                 ░██     ░██    ░██         ░██        ░██     ░██ 
+            ░██  ░██         ░██          ░██   ░██      ░██    ░██          ░██   ░██ ░██     ░██ 
+░██████████      ░██         ░██████████   ░██████       ░██    ░██████████   ░██████  ░██     ░██ 
+EOF
+
+sleep 2;
+
+cat << EOF
+
+
+-------------- Assalamu'alaikum, $HOSTNAME --------------
+
+
+------------------ Adakah donat guys?? ------------------
+
+
+EOF
+
+sleep 2;
+
+(fancy_spinner "Mengecek platform..." & SP=$!; sleep 4; kill $SP; printf "\r✓ Platform terdeteksi: $PLATFORM\n")
+
+if [ "$PLATFORM" = "unknown" ]; then
+    echo "Unsupported platform: $PLATFORM"
+    exit 1
+else
+    if [ "$PLATFORM" = "windows" ]; then
+        echo "Menginstall PESTECH SUITE..."
+        # curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.ps1 | powershell
+    else
+        echo "Menginstall PESTECH SUITE..."
+        # curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.sh | sh
+    fi
+fi
