@@ -27,6 +27,7 @@ HOSTNAME=$(hostnamectl | grep "Static hostname" | awk '{print $3}')
 (fancy_spinner "Menghubungi thinkpad bang Ahmad..." & SP=$!; sleep 4; kill $SP; printf "\r✓ Terhubung!")
 
 cat << EOF
+
                  ░█████████  ░██████████   ░██████   ░██████████░██████████   ░██████  ░██     ░██ 
             ░██  ░██     ░██ ░██          ░██   ░██      ░██    ░██          ░██   ░██ ░██     ░██ 
              ░██ ░██     ░██ ░██         ░██             ░██    ░██         ░██        ░██     ░██ 
@@ -42,6 +43,12 @@ cat << EOF
 
 
 -------------- Assalamu'alaikum, $HOSTNAME --------------
+
+EOF
+
+sleep 2;
+
+cat << EOF
 
 
 ------------------ Adakah donat guys?? ------------------
@@ -59,9 +66,9 @@ if [ "$PLATFORM" = "unknown" ]; then
 else
     if [ "$PLATFORM" = "windows" ]; then
         echo "Menginstall PESTECH SUITE..."
-        # curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.ps1 | powershell
+        curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.ps1 | powershell
     else
         echo "Menginstall PESTECH SUITE..."
-        # curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.sh | sh
+        curl -fsSL https://raw.githubusercontent.com/kreiscript/kreiscript/main/install.sh | sh
     fi
 fi

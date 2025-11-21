@@ -1,4 +1,58 @@
-Write-Host "Mendeteksi system (dan mengirim informasi pribadi ke bang Ahmad ;) )..." -ForegroundColor Cyan
+function Fancy-Spinner {
+    param(
+        [string]$Message
+    )
+
+    $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
+
+    while ($true) {
+        foreach ($frame in $spin) {
+            Write-Host "`r$frame $Message" -NoNewline
+            Start-Sleep -Milliseconds 100
+        }
+    }
+}
+
+$HOSTNAME = $env:COMPUTERNAME
+
+$spinner = Start-Job { Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." }
+Start-Sleep -Seconds 4
+Stop-Job -Job $spinner | Out-Null
+Remove-Job -Job $spinner | Out-Null
+
+Write-Host "`r✓ Terhubung!" -ForegroundColor Green
+Start-Sleep -Seconds 1
+
+@"
+
+                 ░█████████  ░██████████   ░██████   ░██████████░██████████   ░██████  ░██     ░██ 
+            ░██  ░██     ░██ ░██          ░██   ░██      ░██    ░██          ░██   ░██ ░██     ░██ 
+             ░██ ░██     ░██ ░██         ░██             ░██    ░██         ░██        ░██     ░██ 
+              ░██░█████████  ░█████████   ░████████      ░██    ░█████████  ░██        ░██████████ 
+             ░██ ░██         ░██                 ░██     ░██    ░██         ░██        ░██     ░██ 
+            ░██  ░██         ░██          ░██   ░██      ░██    ░██          ░██   ░██ ░██     ░██ 
+░██████████      ░██         ░██████████   ░██████       ░██    ░██████████   ░██████  ░██     ░██ 
+"@ | Write-Host
+
+Start-Sleep -Seconds 2
+
+@"
+-------------- Assalamu'alaikum, $HOSTNAME --------------
+"@ | Write-Host
+
+Start-Sleep -Seconds 2
+
+$spinner = Start-Job { Fancy-Spinner -Message "Mendeteksi system (dan mengirim informasi pribadi ke bang Ahmad ;) )..." }
+Start-Sleep -Seconds 4
+Stop-Job -Job $spinner | Out-Null
+Remove-Job -Job $spinner | Out-Null
+
+Write-Host "`r✓ System terdeteksi!" -ForegroundColor Green
+Start-Sleep -Seconds 1
+
+@"
+------------------ Adakah donat guys?? ------------------
+"@ | Write-Host
 
 # ===== Detect architecture =====
 $arch = (Get-CimInstance Win32_Processor).Architecture
@@ -42,12 +96,16 @@ while ($i -lt 6) {
 $tempFile = "$env:TEMP\activitywatch_setup.exe"
 $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
 
-Write-Host "Mendownload virus..." -ForegroundColor Cyan
+$spinner = Start-Job { Fancy-Spinner -Message "Mendownload virus..." }
+Start-Sleep -Seconds 4
 Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
+Stop-Job -Job $spinner | Out-Null
+Remove-Job -Job $spinner | Out-Null
 
-Write-Host "Download selesai. Mulai instalasi..." -ForegroundColor Green
-
-# ===== Run installer silently or normally =====
+$spinner = Start-Job { Fancy-Spinner -Message "Mulai instalasi..." }
+Start-Sleep -Seconds 2
 Start-Process -FilePath $tempFile -Wait
+Stop-Job -Job $spinner | Out-Null
+Remove-Job -Job $spinner | Out-Null
 
 Write-Host "`nActivityWatch installation finished!" -ForegroundColor Green
