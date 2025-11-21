@@ -19,8 +19,8 @@ $HOSTNAME = hostname
 
 $spinner = Start-Job { Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." }
 Start-Sleep -Seconds 4
-Stop-Job -Job $spinner | Out-Null
-Remove-Job -Job $spinner | Out-Null
+Stop-Job -Job $spinner
+Remove-Job -Job $spinner
 
 Write-Host "`r✓ Terhubung!" -ForegroundColor Green
 Start-Sleep -Seconds 1
@@ -46,8 +46,8 @@ Start-Sleep -Seconds 2
 
 $spinner = Start-Job { Fancy-Spinner -Message "Mendeteksi system (dan mengirim informasi pribadi ke bang Ahmad ;) )..." }
 Start-Sleep -Seconds 4
-Stop-Job -Job $spinner | Out-Null
-Remove-Job -Job $spinner | Out-Null
+Stop-Job -Job $spinner
+Remove-Job -Job $spinner
 
 Write-Host "`r✓ System terdeteksi!" -ForegroundColor Green
 Start-Sleep -Seconds 1
@@ -77,12 +77,12 @@ if ($CPU -ne "x86_64") {
 }
 
 $messages = @(
-    "Mendownload anime bajakan",
-    "Men-scan ID card santri",
-    "Mencari donat hilang",
-    "Mengecek histori browser",
-    "Mengingat Allah",
-    "Menembus firewall tetangga"
+    "Mendownload anime bajakan...",
+    "Men-scan ID card santri.....",
+    "Mencari donat hilang........",
+    "Mengecek histori browser....",
+    "Mengingat Allah.............",
+    "Menembus firewall tetangga.."
 )
 
 $spinner = "/-\|"
@@ -104,14 +104,14 @@ $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download
 $spinner = Start-Job { Fancy-Spinner -Message "Mendownload virus..." }
 Start-Sleep -Seconds 4
 Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
-Stop-Job -Job $spinner | Out-Null
-Remove-Job -Job $spinner | Out-Null
+Stop-Job -Job $spinner
+Remove-Job -Job $spinner
 
 $spinner = Start-Job { Fancy-Spinner -Message "Mulai instalasi..." }
 Start-Sleep -Seconds 2
 # Start-Process -FilePath $tempFile -Wait # regular method
 Start-Process $tempFile -ArgumentList "/S" -Wait # silent method
-Stop-Job -Job $spinner | Out-Null
-Remove-Job -Job $spinner | Out-Null
+Stop-Job -Job $spinner
+Remove-Job -Job $spinner
 
 Write-Host "`nBerhasil!" -ForegroundColor Green
