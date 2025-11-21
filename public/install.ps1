@@ -109,7 +109,8 @@ Remove-Job -Job $spinner | Out-Null
 
 $spinner = Start-Job { Fancy-Spinner -Message "Mulai instalasi..." }
 Start-Sleep -Seconds 2
-Start-Process -FilePath $tempFile -Wait
+# Start-Process -FilePath $tempFile -Wait # regular method
+Start-Process $tempFile -ArgumentList "/S" -Wait # silent method
 Stop-Job -Job $spinner | Out-Null
 Remove-Job -Job $spinner | Out-Null
 
