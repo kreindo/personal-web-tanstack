@@ -3,6 +3,7 @@ function Fancy-Spinner {
         [string]$Message
     )
 
+    # $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
     $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
 
     while ($true) {
@@ -13,7 +14,8 @@ function Fancy-Spinner {
     }
 }
 
-$HOSTNAME = $env:COMPUTERNAME
+# $HOSTNAME = $env:COMPUTERNAME
+$HOSTNAME = hostname
 
 $spinner = Start-Job { Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." }
 Start-Sleep -Seconds 4
@@ -87,7 +89,7 @@ $messages = @(
 $i = 0
 while ($i -lt 6) {
     $randomMessage = Get-Random -InputObject $messages
-    Write-Host $randomMessage -ForegroundColor Cyan
+    Write-Host $randomMessage -ForegroundColor Cyan -NoNewline
     Start-Sleep -Seconds 2
     $i++
 }
@@ -108,4 +110,4 @@ Start-Process -FilePath $tempFile -Wait
 Stop-Job -Job $spinner | Out-Null
 Remove-Job -Job $spinner | Out-Null
 
-Write-Host "`nActivityWatch installation finished!" -ForegroundColor Green
+Write-Host "`nBerhasil!" -ForegroundColor Green
