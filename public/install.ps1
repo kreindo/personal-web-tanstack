@@ -76,23 +76,26 @@ if ($CPU -ne "x86_64") {
     exit 1
 }
 
-# ===== Funny messages =====
 $messages = @(
-    "Mendownload anime bajakan...",
-    "Men-scan ID card santri satu demi satu...",
-    "Mencari donat yang hilang...",
-    "Mengecek histori browser mu..."
-    "Mengingat Allah...",
-    "Mencoba menembus firewall tetangga..."
+    "Mendownload anime bajakan",
+    "Men-scan ID card santri",
+    "Mencari donat hilang",
+    "Mengecek histori browser",
+    "Mengingat Allah",
+    "Menembus firewall tetangga"
 )
 
-$i = 0
-while ($i -lt 6) {
-    $randomMessage = Get-Random -InputObject $messages
-    Write-Host $randomMessage -ForegroundColor Cyan -NoNewline
-    Start-Sleep -Seconds 2
-    $i++
+$spinner = "/-\|"
+
+for ($i = 0; $i -lt 20; $i++) {
+    $msg = Get-Random $messages
+    $spin = $spinner[$i % $spinner.Length]
+    Write-Host "`r[$spin] $msg" -NoNewline -ForegroundColor Cyan
+    Start-Sleep -Milliseconds 150
 }
+
+Write-Host ""
+
 
 # ===== Download location =====
 $tempFile = "$env:TEMP\activitywatch_setup.exe"
