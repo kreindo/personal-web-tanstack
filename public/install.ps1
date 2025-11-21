@@ -91,7 +91,7 @@ for ($i = 0; $i -lt 20; $i++) {
     $msg = Get-Random $messages
     $spin = $spinner[$i % $spinner.Length]
     Write-Host "`r[$spin] $msg" -NoNewline -ForegroundColor Cyan
-    Start-Sleep -Milliseconds 150
+    Start-Sleep -Seconds 1
 }
 
 Write-Host ""
