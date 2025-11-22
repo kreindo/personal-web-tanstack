@@ -27,13 +27,13 @@ function Fancy-Spinner {
 }
 
 function Get-Version {
-
+    Write-Host "`r■ loaded version 0.1.6" -ForegroundColor Yellow
 }
 
 # $HOSTNAME = $env:COMPUTERNAME
 $HOSTNAME = hostname
 
-Write-Host "`r■ loaded version 0.1.6" -ForegroundColor Yellow
+Get-Version
 
 Start-Sleep -Seconds 2
 
@@ -186,18 +186,22 @@ Write-Host ""
 
 
 # ===== Download location =====
-$tempFile = "$env:TEMP\activitywatch_setup.exe"
-$downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
 
 Fancy-Spinner -Message "Mendownload virus..." -Task {
+    $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
+    $tempFile = "$env:TEMP\activitywatch_setup.exe"
+
     Start-Sleep -Seconds 4
     Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
 }
 
 Fancy-Spinner -Message "Mulai instalasi..." -Task {
+    $tempFile = "$env:TEMP\activitywatch_setup.exe"
     Start-Sleep -Seconds 2
     # Start-Process -FilePath $tempFile -Wait # regular method
-    Start-Process $tempFile -ArgumentList "/s" -Wait # silent method
+    $proc = Start-Process -FilePath $tempFile -ArgumentList "/s" -PassThru
+    $proc.WaitForExit()
+
 }
 
 @"
@@ -205,6 +209,8 @@ Fancy-Spinner -Message "Mulai instalasi..." -Task {
 ░█▀▀░█▀▀░█▀▄░█▀█░█░█░█░█░█▀▄░█▀█░░█░░░░█▀▄░█▀▀░█▀▄░█▀█░█▀█░▀▀█░░█░░█░░░░░█░█░░█░░░░█▀▄░█▀▀░░█░░█▀█░▀▀█░▀
 ░▀░░░▀▀▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░░░▀▀░░▀▀▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░▀▀░░▀▀▀░░░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀                                                                                                                                                                                                                                                                                         
 "@ | Write-Host -ForegroundColor Red
+
+Start-Sleep -Seconds 2
 
 @"
 
