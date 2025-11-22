@@ -27,7 +27,7 @@ function Fancy-Spinner {
 }
 
 function Get-Version {
-    Write-Host "`r■ loaded version 0.1.6" -ForegroundColor Yellow
+    Write-Host "`r■ loaded version 1.0.0" -ForegroundColor Yellow
 }
 
 # $HOSTNAME = $env:COMPUTERNAME
