@@ -1,27 +1,37 @@
 function Fancy-Spinner {
     param(
-        [string]$Message
+        [string]$Message,
+        [ScriptBlock]$Task
     )
 
-    # $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
-    $spin = @("/", "-", "\", "|")
+    $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
+    # $spin = @("/", "-", "\", "|")
+    $running = $true
 
-    while ($true) {
+    $taskJob = Start-Job $Task
+
+    while ($running) {
         foreach ($frame in $spin) {
+            if ($taskJob.State -ne 'Running') {
+                $running = $false
+                break
+            }
             Write-Host "`r$frame $Message" -NoNewline
-            Start-Sleep -Milliseconds 100
+            Start-Sleep -Milliseconds 300
         }
     }
+
+    Receive-Job $taskJob | Out-Null
+    Remove-Job $taskJob
+    Write-Host "`r✔ $Message"
 }
 
 # $HOSTNAME = $env:COMPUTERNAME
 $HOSTNAME = hostname
 
-$spinner = Start-Job { Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." }
-Start-Sleep -Seconds 4
-Stop-Job -Job $spinner
-Remove-Job -Job $spinner
-
+Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." -Task {
+    Start-Sleep -Seconds 4
+}
 Write-Host "`r✓ Terhubung!" -ForegroundColor Green
 Start-Sleep -Seconds 1
 
