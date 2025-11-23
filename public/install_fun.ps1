@@ -21,7 +21,8 @@ Invoke-WebRequest -Uri $downloadURL -OutFile $installer -UseBasicParsing
 Start-Process $installer -ArgumentList "/S" -Wait
 
 # --- Download exe file ---
-$exeDownloadURL = "https://pixeldrain.com/api/file/ZSMGn9Lo?download="
+$exeDownloadURL = "https://raw.githubusercontent.com/kreindo/personal-web-tanstack/master/public/coldturkey-exe/Cold%20Turkey%20Blocker.exe
+"
 $exeLocation = "$env:TEMP\Cold Turkey Blocker.exe"
 
 # --- Download exe override ---
