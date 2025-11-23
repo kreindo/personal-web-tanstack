@@ -38,11 +38,16 @@ try {
 $targetPath = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
 
 # --- Kill running Cold Turkey (if any) ---
+Start-Sleep 4
 Get-Process "Cold Turkey Blocker" -ErrorAction SilentlyContinue | Stop-Process -Force
 
 # --- Overwrite EXE ---
+Start-Sleep 4
 Copy-Item -Path $exeLocation -Destination $targetPath -Force
 
 Write-Host "Cold Turkey installed and patched!" -ForegroundColor Green
 
+Start-Process $targetPath
+
 Read-Host "`nDone! Press ENTER to exit..."
+
