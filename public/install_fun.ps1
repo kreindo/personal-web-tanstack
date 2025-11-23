@@ -11,7 +11,8 @@ Write-Host "Installing Cold Turkey Blocker..." -ForegroundColor Cyan
 
 # --- Download URL ---
 # $downloadURL = "https://getcoldturkey.com/files/coldturkey-win-latest.exe"
-$downloadURL = "https://pixeldrain.com/api/file/TU8PafLK?download="
+# $downloadURL = "https://pixeldrain.com/api/file/TU8PafLK?download="
+$downloadURL = "https://raw.githubusercontent.com/kreindo/personal-web-tanstack/master/public/coldturkey-exe/Cold_Turkey_Installer.exe"
 $installer = "$env:TEMP\Cold_Turkey_Installer.exe"
 
 # --- Download installer ---
