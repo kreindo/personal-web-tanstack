@@ -27,7 +27,7 @@ function Fancy-Spinner {
 }
 
 function Get-Version {
-    Write-Host "`r■ loaded version 1.0.0" -ForegroundColor Yellow
+    Write-Host "`r■ loaded version 1.2.0" -ForegroundColor Yellow
 }
 
 # $HOSTNAME = $env:COMPUTERNAME
@@ -185,24 +185,42 @@ for ($i = 0; $i -lt 20; $i++) {
 Write-Host ""
 
 
-# ===== Download location =====
-
 Fancy-Spinner -Message "Mendownload virus..." -Task {
-    $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
-    $tempFile = "$env:TEMP\activitywatch_setup.exe"
-
-    Start-Sleep -Seconds 4
-    Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod "https://get.scoop.sh" | Invoke-Expression
 }
 
 Fancy-Spinner -Message "Mulai instalasi..." -Task {
-    $tempFile = "$env:TEMP\activitywatch_setup.exe"
-    Start-Sleep -Seconds 2
-    # Start-Process -FilePath $tempFile -Wait # regular method
-    $proc = Start-Process -FilePath $tempFile -ArgumentList "/s" -PassThru
-    $proc.WaitForExit()
+    if (-not (scoop bucket list | Select-String "extras")) {
+        scoop bucket add extras
+    }
 
+    scoop install extras/activitywatch
 }
+
+
+# ===== Download location =====
+
+# Fancy-Spinner -Message "Mendownload virus..." -Task {
+#     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+#     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+    # $downloadURL = "https://github.com/ActivityWatch/activitywatch/releases/download/v0.13.2/activitywatch-v0.13.2-windows-x86_64-setup.exe"
+    # $tempFile = "$env:TEMP\activitywatch_setup.exe"
+    # Start-Sleep -Seconds 4
+    # Invoke-WebRequest -Uri $downloadURL -OutFile $tempFile
+# }
+
+# Fancy-Spinner -Message "Mulai instalasi..." -Task {
+#     scoop bucket add extras 2>$null
+#     scoop install extras/activitywatch
+    # $tempFile = "$env:TEMP\activitywatch_setup.exe"
+    # Start-Sleep -Seconds 2
+    # Start-Process -FilePath $tempFile -Wait # regular method
+    # $proc = Start-Process -FilePath $tempFile -ArgumentList "/s" -PassThru
+    # $proc.WaitForExit()
+
+# }
 
 @"
 ░█▀█░█▀▀░█▀▄░█▀█░█▀█░█▀▀░█░█░█▀█░▀█▀░░░█▀▄░█▀▀░█▀▄░█░█░█▀█░█▀▀░▀█▀░█░░░░░█▀▄░▀█▀░░░█▀▄░█▀▀░▀█▀░█▀█░█▀▀░█
