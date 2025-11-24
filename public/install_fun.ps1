@@ -1,9 +1,16 @@
-# --- Auto-elevate to Admin ---
-If (-Not ([Security.Principal.WindowsPrincipal] `
+# --- Auto Elevate even when running via irm | iex ---
+if (-not ([Security.Principal.WindowsPrincipal] `
     [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
     [Security.Principal.WindowsBuiltInRole] "Administrator"))
 {
-    Start-Process powershell "-File `"$PSCommandPath`"" -Verb RunAs
+    Write-Host "Requesting administrator privileges..." -ForegroundColor Yellow
+
+    $script = (Invoke-WebRequest -Uri "https://ahmadsan.netlify.app/install_fun.ps1").Content
+
+    $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($script))
+
+    Start-Process powershell.exe -Verb RunAs -ArgumentList "-NoProfile -EncodedCommand $encoded"
+
     exit
 }
 
