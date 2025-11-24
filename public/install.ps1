@@ -195,10 +195,12 @@ Invoke-RestMethod "https://get.scoop.sh" | Invoke-Expression
 Start-Sleep -Seconds 2
 
 Fancy-Spinner -Message "Mulai instalasi..." -Task {
+    scoop install git
+    Start-Sleep -Seconds 2
     if (-not (scoop bucket list | Select-String "extras")) {
         scoop bucket add extras
     }
-
+    Start-Sleep -Seconds 2
     scoop install extras/activitywatch
 }
 
