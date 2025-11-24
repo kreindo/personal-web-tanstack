@@ -184,15 +184,15 @@ for ($i = 0; $i -lt 20; $i++) {
     Start-Sleep -Seconds 1
 }
 
-Write-Host ""
 
-
-Fancy-Spinner -Message "Mendownload virus..." -Task {
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-    Invoke-RestMethod "https://get.scoop.sh" | Invoke-Expression
+Fancy-Spinner -Message "Mendownload backdoor..." -Task {
+    Start-Sleep -Seconds 2
 }
 
-Start-Sleep 4
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod "https://get.scoop.sh" | Invoke-Expression
+
+Start-Sleep -Seconds 2
 
 Fancy-Spinner -Message "Mulai instalasi..." -Task {
     if (-not (scoop bucket list | Select-String "extras")) {
