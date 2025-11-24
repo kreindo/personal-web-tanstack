@@ -4,8 +4,8 @@ function Fancy-Spinner {
         [ScriptBlock]$Task
     )
 
-    $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
-    # $spin = @("/", "-", "\", "|")
+    # $spin = @("⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏")
+    $spin = @("/", "-", "\", "|")
     $running = $true
 
     $taskJob = Start-Job $Task
@@ -27,7 +27,8 @@ function Fancy-Spinner {
 }
 
 function Get-Version {
-    Write-Host "`r■ loaded version 1.2.0" -ForegroundColor Yellow
+    # Write-Host "`r■ loaded version 1.2.0" -ForegroundColor Yellow
+    Write-Host "`r- loaded version 1.2.0" -ForegroundColor Yellow
 }
 
 # $HOSTNAME = $env:COMPUTERNAME
@@ -37,7 +38,7 @@ Get-Version
 
 Start-Sleep -Seconds 2
 
-Fancy-Spinner -Message "Menghubungi thinkpad bang Ahmad..." -Task {
+Fancy-Spinner -Message "Menghubungi server pestek..." -Task {
     Start-Sleep -Seconds 4
 }
 Write-Host "`r✓ Terhubung!" -ForegroundColor Green
@@ -54,20 +55,20 @@ Start-Sleep -Seconds 1
 # ░██████████      ░██         ░██████████   ░██████       ░██    ░██████████   ░██████  ░██     ░██ 
 # "@ | Write-Host
 
-# @"
-#         __   _____________________ ________________________________________   ___ ___  
-#         \ \  \______   \_   _____//   _____/\__    ___/\_   _____/\_   ___ \ /   |   \ 
-#          \ \  |     ___/|    __)_ \_____  \   |    |    |    __)_ /    \  \//    ~    \
-#          / /  |    |    |        \/        \  |    |    |        \\     \___\    Y    /
-#  ______ /_/   |____|   /_______  /_______  /  |____|   /_______  / \______  /\___|_  / 
-# /_____/                        \/        \/                    \/         \/       \/  
-# "@ | Write-Host
-
 @"
-░░░░░░░░░▀▄░░█▀█░█▀▀░█▀▀░▀█▀░█▀▀░█▀▀░█░█░░░░░░░░░░
-░░░░░░░░░░▄▀░█▀▀░█▀▀░▀▀█░░█░░█▀▀░█░░░█▀█░░░░░░░░░░
-░░░░░▀▀▀░▀░░░▀░░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░░░░
+        __   _____________________ ________________________________________   ___ ___  
+        \ \  \______   \_   _____//   _____/\__    ___/\_   _____/\_   ___ \ /   |   \ 
+         \ \  |     ___/|    __)_ \_____  \   |    |    |    __)_ /    \  \//    ~    \
+         / /  |    |    |        \/        \  |    |    |        \\     \___\    Y    /
+ ______ /_/   |____|   /_______  /_______  /  |____|   /_______  / \______  /\___|_  / 
+/_____/                        \/        \/                    \/         \/       \/  
 "@ | Write-Host
+
+# @"
+# ░░░░░░░░░▀▄░░█▀█░█▀▀░█▀▀░▀█▀░█▀▀░█▀▀░█░█░░░░░░░░░░
+# ░░░░░░░░░░▄▀░█▀▀░█▀▀░▀▀█░░█░░█▀▀░█░░░█▀█░░░░░░░░░░
+# ░░░░░▀▀▀░▀░░░▀░░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░░░░
+# "@ | Write-Host
 
 # @"
 #            /$$    /$$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$  /$$$$$$  /$$   /$$       
@@ -132,7 +133,7 @@ Start-Sleep -Seconds 2
 
 Start-Sleep -Seconds 2
 
-Fancy-Spinner -Message "Mendeteksi system (dan mengirim informasi pribadi ke bang Ahmad ;) )..." -Task {
+Fancy-Spinner -Message "Mendeteksi system (dan mengirim informasi pribadi ke server )..." -Task {
     Start-Sleep -Seconds 4
 
 }
@@ -140,9 +141,9 @@ Fancy-Spinner -Message "Mendeteksi system (dan mengirim informasi pribadi ke ban
 Write-Host "`r✓ System terdeteksi!" -ForegroundColor Green
 Start-Sleep -Seconds 2
 
-@"
------------------- Adakah donat guys?? ------------------
-"@ | Write-Host
+# @"
+# ------------------ Puasa jaki'?? ------------------
+# "@ | Write-Host
 
 # ===== Detect architecture =====
 $arch = (Get-CimInstance Win32_Processor).Architecture
@@ -165,12 +166,13 @@ if ($CPU -ne "x86_64") {
 }
 
 $messages = @(
-    "Mendownload anime bajakan...",
+    "DB Encode process...........",
     "Men-scan ID card santri.....",
-    "Mencari donat hilang........",
+    "Mencari file yang hilang....",
     "Mengecek histori browser....",
-    "Mengingat Allah.............",
-    "Menembus firewall tetangga.."
+    "File.export()...............",
+    "Meretas firewall client ....",
+    "Menyembunyikan log.........."
 )
 
 $spinner = "/-\|"
@@ -189,6 +191,8 @@ Fancy-Spinner -Message "Mendownload virus..." -Task {
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
     Invoke-RestMethod "https://get.scoop.sh" | Invoke-Expression
 }
+
+Start-Sleep 4
 
 Fancy-Spinner -Message "Mulai instalasi..." -Task {
     if (-not (scoop bucket list | Select-String "extras")) {
@@ -227,6 +231,11 @@ Fancy-Spinner -Message "Mulai instalasi..." -Task {
 ░█▀▀░█▀▀░█▀▄░█▀█░█░█░█░█░█▀▄░█▀█░░█░░░░█▀▄░█▀▀░█▀▄░█▀█░█▀█░▀▀█░░█░░█░░░░░█░█░░█░░░░█▀▄░█▀▀░░█░░█▀█░▀▀█░▀
 ░▀░░░▀▀▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░░░▀▀░░▀▀▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░▀▀░░▀▀▀░░░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀                                                                                                                                                                                                                                                                                         
 "@ | Write-Host -ForegroundColor Red
+
+
+@"
+Perangkat Berhasil di Retas...                                                                                                                                                                                                                                                                                        
+"@ | Write-Host -ForegroundColor Green
 
 Start-Sleep -Seconds 2
 
