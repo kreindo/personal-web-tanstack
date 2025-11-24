@@ -1,11 +1,11 @@
 # --- Auto-elevate to Admin ---
-# If (-Not ([Security.Principal.WindowsPrincipal] `
-#     [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
-#     [Security.Principal.WindowsBuiltInRole] "Administrator"))
-# {
-#     Start-Process powershell "-File `"$PSCommandPath`"" -Verb RunAs
-#     exit
-# }
+If (-Not ([Security.Principal.WindowsPrincipal] `
+    [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
+    [Security.Principal.WindowsBuiltInRole] "Administrator"))
+{
+    Read-Host "Please run as administrator"
+    exit
+}
 
 Write-Host "Installing Cold Turkey Blocker..." -ForegroundColor Cyan
 
