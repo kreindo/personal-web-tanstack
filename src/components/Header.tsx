@@ -29,7 +29,7 @@ export default function Header() {
         >
           <Menu size={24} />
         </button>
-        <h1 className="ml-4 text-xl font-semibold">
+        {/* <h1 className="ml-4 text-xl font-semibold">
           <Link to="/">
             <img
               src="/tanstack-word-logo-white.svg"
@@ -37,7 +37,7 @@ export default function Header() {
               className="h-10"
             />
           </Link>
-        </h1>
+        </h1> */}
       </header>
 
       <aside
