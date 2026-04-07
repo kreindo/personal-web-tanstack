@@ -49,5 +49,5 @@ Write-Host "Cold Turkey installed and patched!" -ForegroundColor Green
 
 Start-Process $targetPath
 
-Read-Host "`nDone! Press ENTER to exit..."
+Read-Host "`nDone, remember 24/1! Press ENTER to exit..."
 

@@ -8,6 +8,8 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
 
+import CardNav from '../components/CardNav'
+
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import ConvexProvider from '../integrations/convex/provider'
@@ -53,7 +55,43 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ConvexProvider>
-          <Header />
+          {/* <Header /> */}
+          <CardNav logo='test' items={[
+            {
+              label: 'About',
+              bgColor: 'bg-cyan-500',
+              textColor: 'text-white',
+              links: [
+                {
+                  label: 'Company',
+                  ariaLabel: 'Company',
+                  href: '/about/company',
+                },
+                {
+                  label: 'Career',
+                  ariaLabel: 'Career',
+                  href: '/about/career',
+                },
+              ],
+            },
+            {
+              label: 'Projects',
+              bgColor: '#008030',
+              textColor: 'white',
+              links: [
+                {
+                  label: 'Portfolio',
+                  ariaLabel: 'Portfolio',
+                  href: '/projects/portfolio',
+                },
+                {
+                  label: 'Blog',
+                  ariaLabel: 'Blog',
+                  href: '/projects/blog',
+                },
+              ],
+            }
+          ]}/>
           {children}
           <TanStackDevtools
             config={{
