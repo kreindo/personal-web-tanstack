@@ -7,8 +7,7 @@ import {
   Waves,
   Sparkles,
 } from 'lucide-react'
-// import Dither from '../components/bits/Dither';
-
+import PixelBlast from "../components/PixelBlast"
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -42,67 +41,38 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-
-      {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-
-        <Dither
-
-          waveColor={[0.1, 0.8, 0.1]}
-
-          disableAnimation={false}
-
-          enableMouseInteraction={true}
-
-          mouseRadius={0.2}
-
-          colorNum={4}
-
-          waveAmplitude={0.3}
-
-          waveFrequency={3}
-
-          waveSpeed={0.01}
-
+    <div className="min-h-screen bg-black">
+      <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
+        <PixelBlast
+          color='gray'
+          autoPauseOffscreen
+          patternDensity={2}
+          speed={5}
+          antialias
         />
-
-      </div> */}
-      <section className="relative py-20 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
+      </div>
+      
+      <section className="relative py-36 px-6 text-center overflow-hidden">
         <div className="relative max-w-5xl mx-auto">
           <div className="flex flex-col items-center justify-center gap-6 mb-6">
-            <img
+            {/* <img
               src="https://github.com/kreindo.png"
               alt="TanStack Logo"
               className="size-32 border-4 border-cyan-500 rounded-full"
-            />
-            <h1 className="text-6xl md:text-7xl font-black text-white [letter-spacing:-0.08em]">
-              <span className="text-gray-300">Ahmad</span>{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Dahsan
-              </span>
+            /> */}
+            <h1 className="font-bbh text-6xl md:text-7xl font-black text-white">
+              <span className="text-gray-300">Welcome to my little corner in the internet</span>
             </h1>
           </div>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-            Web developer from Makassar
-          </p>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-            I'm a web developer from Makassar, Indonesia. I'm here to help you
-            build your next web application.
-          </p>
           <div className="flex flex-col items-center gap-4">
-            <a
-              href="#"
-              // target="_blank"
-              // rel="noopener noreferrer"
+            <div
               className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
-              onClick={(e) => {
-                e.preventDefault()
-                alert('wip')
-              }}
             >
               Contact me
-            </a>
+            </div>
+            </div>
+            
+            <div>
             <p className="text-gray-400 text-sm mt-2">
               Let's build something amazing together!
             </p>
