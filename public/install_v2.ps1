@@ -51,7 +51,7 @@ Start-Process $targetPath
 
 # --- 8. Auto-Configure Blocks (New for v4.9+) ---
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
-$blockName = "Block1"
+$blockName = "Block" + [guid]::NewGuid().ToString().Substring(0, 8)
 
 Start-Sleep 4
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
