@@ -44,8 +44,40 @@ if (Test-Path $exeLocation) {
 }
 
 # --- 7. Start Service & App ---
+Start-Sleep 4
 Start-Process "C:\Program Files\Cold Turkey\CTServiceInstaller.exe" -Wait # Re-registers the service
 Start-Process $targetPath
+
+# --- 8. Auto-Configure Blocks (New for v4.9+) ---
+$ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
+$blockName = "Block1"
+
+Write-Host "Configuring $blockName..." -ForegroundColor Gray
+
+# 1. Create the block (if it doesn't exist)
+Start-Process $ctCLI -ArgumentList "-add-block `"$blockName`"" -Wait
+
+# 2. Add your standard "distraction" list
+# You can add multiple sites by repeating the command
+$sites = "*.*"
+foreach ($site in $sites) {
+    Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -web `"$site`"" -Wait
+}
+
+# 3. Add your standard "distraction" list
+# You can add multiple sites by repeating the command
+$siteExceptions = "*youtube.com*", "*facebook.com*", "*twitter.com*", "*shopee.co.id*", "*tokopedia.com*"
+foreach ($site in $siteExceptions) {
+    Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -exception `"$site`"" -Wait
+}
+
+# 4. Add an application (Optional - e.g., blocking a specific game or app)
+# Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -app `"C:\Path\To\Game.exe`"" -Wait
+
+# Write-Host "✅ $blockName configured with $($sites.Count) sites." -ForegroundColor Green
+
+# 5. Optional: Start the block immediately and lock it for the duration of the lab
+Start-Process $ctCLI -ArgumentList "-start `"$blockName`" -password 12345667890" -Wait
 
 # Only use Read-Host if a human is actually watching (Interactive mode)
 if ([Environment]::UserInteractive) {
