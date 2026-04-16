@@ -57,5 +57,5 @@ Start-Process $targetPath
 
 # Only use Read-Host if a human is actually watching (Interactive mode)
 if ([Environment]::UserInteractive) {
-    Read-Host "`nDone! Press ENTER to exit..."
+    Read-Host "`nDone, remember 24/1!! Press ENTER to exit..."
 }
