@@ -47,7 +47,7 @@ if (Test-Path $exeLocation) {
 # --- 7. Start Service & App ---
 Start-Sleep 4
 Start-Process "C:\Program Files\Cold Turkey\CTServiceInstaller.exe" -Wait # Re-registers the service
-Start-Process $targetPath
+# Start-Process $targetPath
 
 
 # --- Browser setup ---
@@ -80,7 +80,7 @@ Write-Host "🕵️ Allowing extensions in Incognito/InPrivate mode..." -Foregro
 # --- CHROME: Allow forced extensions in Incognito ---
 # This policy ensures that extensions in the Forcelist are allowed to run in Incognito.
 $chromePolicyPath = "HKLM:\SOFTWARE\Policies\Google\Chrome"
-Set-ItemProperty -Path $chromePolicyPath -Name "ExtensionInstallForcelist" -Value @("pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx")
+Set-ItemProperty -Path $chromePolicyPath -Name "ExtensionInstallForcelist" -Value "pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx"
 # The key policy:
 Set-ItemProperty -Path $chromePolicyPath -Name "IncognitoModeAvailability" -Value 0 # 0 = Enabled, but extensions follow policy
 
