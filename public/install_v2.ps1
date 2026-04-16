@@ -43,15 +43,7 @@ if (Test-Path $exeLocation) {
     Write-Host "✅ Cold Turkey patched successfully!" -ForegroundColor Green
 }
 
-# --- 7. Anti-Tamper: Hide from Uninstall List ---
-# This makes Veyon "invisible" to students in Control Panel
-# $veyonPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Veyon"
-# if (Test-Path $veyonPath) {
-#     Set-ItemProperty -Path $veyonPath -Name "SystemComponent" -Value 1
-#     Write-Host "🛡️ Veyon hidden from Add/Remove Programs." -ForegroundColor Yellow
-# }
-
-# --- 8. Start Service & App ---
+# --- 7. Start Service & App ---
 Start-Process "C:\Program Files\Cold Turkey\CTServiceInstaller.exe" -Wait # Re-registers the service
 Start-Process $targetPath
 
