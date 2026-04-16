@@ -50,6 +50,57 @@ Start-Process "C:\Program Files\Cold Turkey\CTServiceInstaller.exe" -Wait # Re-r
 Start-Process $targetPath
 
 
+# --- Browser setup ---
+Write-Host "🛡️ Force-installing browser extensions..." -ForegroundColor Cyan
+
+# --- 1. CHROME ---
+# ID: pganeibhckoanndahmnfggfoeofncnii
+$chromePath = "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist"
+if (!(Test-Path $chromePath)) { New-Item -Path $chromePath -Force | Out-Null }
+Set-ItemProperty -Path $chromePath -Name "101" -Value "pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx"
+
+# --- 2. EDGE ---
+# ID: jfphahkinplobmabmgjmjgflbhjjddeb
+$edgePath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
+if (!(Test-Path $edgePath)) { New-Item -Path $edgePath -Force | Out-Null }
+Set-ItemProperty -Path $edgePath -Name "101" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx"
+
+# --- 3. FIREFOX ---
+# Firefox uses a different policy structure (Enterprise Policies)
+$ffPath = "HKLM:\SOFTWARE\Policies\Mozilla\Firefox\Extensions\Install"
+if (!(Test-Path $ffPath)) { New-Item -Path $ffPath -Force | Out-Null }
+# For Firefox, we point directly to the .xpi URL you provided
+Set-ItemProperty -Path $ffPath -Name "1" -Value "https://getcoldturkey.com/files/Cold_Turkey_Firefox_Addon.xpi"
+
+Write-Host "✅ Chrome, Edge, and Firefox extensions forced via Policy." -ForegroundColor Green
+
+
+Write-Host "🕵️ Allowing extensions in Incognito/InPrivate mode..." -ForegroundColor Cyan
+
+# --- CHROME: Allow forced extensions in Incognito ---
+# This policy ensures that extensions in the Forcelist are allowed to run in Incognito.
+$chromePolicyPath = "HKLM:\SOFTWARE\Policies\Google\Chrome"
+Set-ItemProperty -Path $chromePolicyPath -Name "ExtensionInstallForcelist" -Value @("pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx")
+# The key policy:
+Set-ItemProperty -Path $chromePolicyPath -Name "IncognitoModeAvailability" -Value 0 # 0 = Enabled, but extensions follow policy
+
+# --- EDGE: Allow forced extensions in InPrivate ---
+$edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+Set-ItemProperty -Path $edgePolicyPath -Name "InPrivateModeAvailability" -Value 0 
+
+# --- THE "MASTER" REGISTRY HACK (Chrome & Edge) ---
+# This is a more direct way to grant the 'Incognito' permission specifically to the Cold Turkey ID
+$chromeUserPath = "HKLM:\SOFTWARE\Google\Chrome\Extensions\pganeibhckoanndahmnfggfoeofncnii"
+if (!(Test-Path $chromeUserPath)) { New-Item $chromeUserPath -Force | Out-Null }
+Set-ItemProperty -Path $chromeUserPath -Name "allowed_incognito" -Value 1 -Type DWord
+
+$edgeUserPath = "HKLM:\SOFTWARE\Microsoft\Edge\Extensions\jfphahkinplobmabmgjmjgflbhjjddeb"
+if (!(Test-Path $edgeUserPath)) { New-Item $edgeUserPath -Force | Out-Null }
+Set-ItemProperty -Path $edgeUserPath -Name "allowed_incognito" -Value 1 -Type DWord
+
+Write-Host "✅ Incognito/InPrivate bypasses blocked." -ForegroundColor Green
+
+
 # --- 8. Auto-Configure Blocks (New for v4.9+) ---
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
 $blockName = [guid]::NewGuid().ToString().Substring(0, 8)
