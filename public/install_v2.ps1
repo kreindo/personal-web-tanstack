@@ -16,7 +16,8 @@ Invoke-WebRequest -Uri $downloadURL -OutFile $installer -UseBasicParsing
 # --- 3. THE FIX: Silent Install (Inno Setup Flags) ---
 # /VERYSILENT removes the wizard entirely. /SUPPRESSMSGBOXES kills popups.
 Write-Host "Running silent installer..." -ForegroundColor Gray
-Start-Process $installer -ArgumentList "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/CLOSEAPPLICATIONS", "/FORCECLOSEAPPLICATIONS" -Wait
+Start-Process $installer -ArgumentList "/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/SP-" -Wait
+
 
 # --- 4. Prepare EXE Override ---
 $exeDownloadURL = "https://raw.githubusercontent.com/kreindo/personal-web-tanstack/master/public/coldturkey-exe/Cold%20Turkey%20Blocker.exe"
@@ -51,7 +52,7 @@ Start-Process $targetPath
 
 # --- 8. Auto-Configure Blocks (New for v4.9+) ---
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
-$blockName = "Block" + [guid]::NewGuid().ToString().Substring(0, 8)
+$blockName = [guid]::NewGuid().ToString().Substring(0, 8)
 
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
 Start-Sleep 4
