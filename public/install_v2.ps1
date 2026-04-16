@@ -50,8 +50,9 @@ Start-Process $targetPath
 
 # --- 8. Auto-Configure Blocks (New for v4.9+) ---
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
-$blockName = "temp"
+$blockName = "TempBlock"
 
+Start-Sleep 4
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
 
 # 1. Create the block (if it doesn't exist)
@@ -66,7 +67,7 @@ foreach ($site in $sites) {
 
 # 3. Add your standard "distraction" list
 # You can add multiple sites by repeating the command
-$siteExceptions = "*youtube.com*", "*facebook.com*", "*twitter.com*", "*shopee.co.id*", "*tokopedia.com*"
+$siteExceptions = "*pesantrenteknologi.id*"
 foreach ($site in $siteExceptions) {
     Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -exception `"$site`"" -Wait
 }
