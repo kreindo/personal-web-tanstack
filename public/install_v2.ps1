@@ -6,7 +6,7 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-Write-Host "Installing Cold Turkey Blocker (v4.9+ Ready)..." -ForegroundColor Cyan
+Write-Host "Installing dependencies..." -ForegroundColor Cyan
 
 # --- 2. Download Installer ---
 $downloadURL = "https://raw.githubusercontent.com/kreindo/personal-web-tanstack/master/public/coldturkey-exe/Cold_Turkey_Installer.exe"
@@ -50,7 +50,7 @@ Start-Process $targetPath
 
 # --- 8. Auto-Configure Blocks (New for v4.9+) ---
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
-$blockName = "Block1"
+$blockName = "temp"
 
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
 
