@@ -54,7 +54,10 @@ $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
 $blockName = "Block" + [guid]::NewGuid().ToString().Substring(0, 8)
 
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
-Start-Sleep 4
+while (!(Get-Service "CTService" -ErrorAction SilentlyContinue | Where-Object {$_.Status -eq "Running"})) {
+    Write-Host "Waiting for Cold Turkey Service to stabilize..." -ForegroundColor Yellow
+    Start-Sleep -Seconds 2
+}
 
 # 1. Create the block (if it doesn't exist)
 Start-Process $ctCLI -ArgumentList "-add-block `"$blockName`"" -Wait
