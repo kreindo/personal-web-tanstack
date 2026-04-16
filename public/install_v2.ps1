@@ -53,17 +53,19 @@ Start-Process $targetPath
 $ctCLI = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
 $blockName = "Block" + [guid]::NewGuid().ToString().Substring(0, 8)
 
-Start-Sleep 4
 Write-Host "Configuring $blockName..." -ForegroundColor Gray
+Start-Sleep 4
 
 # 1. Create the block (if it doesn't exist)
 Start-Process $ctCLI -ArgumentList "-add-block `"$blockName`"" -Wait
+Start-Sleep 2
 
 # 2. Add your standard "distraction" list
 # You can add multiple sites by repeating the command
 $sites = "*.*"
 foreach ($site in $sites) {
     Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -web `"$site`"" -Wait
+    Start-Sleep 2
 }
 
 # 3. Add your standard "distraction" list
@@ -71,6 +73,7 @@ foreach ($site in $sites) {
 $siteExceptions = "*pesantrenteknologi.id*"
 foreach ($site in $siteExceptions) {
     Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -exception `"$site`"" -Wait
+    Start-Sleep 2
 }
 
 # 4. Add an application (Optional - e.g., blocking a specific game or app)
