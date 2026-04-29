@@ -127,7 +127,7 @@ foreach ($site in $sites) {
 
 # 3. Add your standard "distraction" list
 # You can add multiple sites by repeating the command
-$siteExceptions = "*pesantrenteknologi.id*"
+$siteExceptions = "*pesantrenteknologi.id*, canva.com, studio.youtube.com, learn.kreii.net"
 foreach ($site in $siteExceptions) {
     Start-Process $ctCLI -ArgumentList "-add `"$blockName`" -exception `"$site`"" -Wait
     Start-Sleep 2
