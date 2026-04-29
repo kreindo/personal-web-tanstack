@@ -21,7 +21,7 @@ Set-ItemProperty -Path $edgePolicyPath -Name "1" -Value "*" -Type String
 # ID: pganeibhckoanndahmnfggfoeofncnii
 $chromePath = "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist"
 if (!(Test-Path $chromePath)) { New-Item -Path $chromePath -Force | Out-Null }
-Set-ItemProperty -Path $chromePath -Name "102" -Value "enboaomnljiigfhfjfoalacienlhjlfil;https://clients2.google.com/service/update2/crx" # Untrap Youtube
+Set-ItemProperty -Path $chromePath -Name "102" -Value "enboaomnljigfhfjfoalacienlhjlfil;https://clients2.google.com/service/update2/crx" # Untrap Youtube
 
 # --- 2. EDGE ---
 # ID: jfphahkinplobmabmgjmjgflbhjjddeb
