@@ -36,7 +36,8 @@ Write-Host "✅ Chrome, and Edge extensions forced via Policy." -ForegroundColor
 
 $firefoxPolicyPath = "C:\Program Files\Mozilla Firefox\distribution\policies.json"
 if (!(Test-Path $firefoxPolicyPath)) { New-Item -Path $firefoxPolicyPath -Force | Out-Null }
-$policy = @{
+$policyJson = @'
+{
   "policies": {
     "ExtensionSettings": {
       "*": {
@@ -50,8 +51,9 @@ $policy = @{
     }
   }
 }
+'@
 
-Set-Content -Path $firefoxPolicyPath -Value ($policy | ConvertTo-Json -Depth 4) -Encoding UTF8
+Set-Content -Path $firefoxPolicyPath -Value $policyJson -Encoding UTF8
 
 
 # --- BROWSER SETTINGS: Disable Incognito & Stealth Mode ---
