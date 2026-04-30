@@ -6,16 +6,6 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# Prompt to continue or not
-Write-Host ""
-Write-Host "⚠️  Make sure to run SetExt.ps1 BEFORE continuing!" -ForegroundColor Yellow
-$confirm = Read-Host "Proceed? (Y/N)"
-if ($confirm -notmatch '^[Yy]$') {
-    Write-Host "Aborted. Run SetExt.ps1 first, then re-run this script." -ForegroundColor Red
-    exit
-}
-
-
 Write-Host "Installing dependencies..." -ForegroundColor Cyan
 
 # --- 2. Download Installer ---
