@@ -20,18 +20,20 @@ Set-ItemProperty -Path $edgePolicyPath -Name "1" -Value "*" -Type String
 # --- 1. CHROME ---
 # ID: pganeibhckoanndahmnfggfoeofncnii
 $chromePath = "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist"
+$chromeCrx = "https://clients2.google.com/service/update2/crx"
 if (!(Test-Path $chromePath)) { New-Item -Path $chromePath -Force | Out-Null }
-Set-ItemProperty -Path $chromePath -Name "101" -Value "enboaomnljigfhfjfoalacienlhjlfil;https://clients2.google.com/service/update2/crx" # Untrap Youtube
-Set-ItemProperty -Path $chromePath -Name "102" -Value "pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx" # Cold Turkey
-Set-ItemProperty -Path $chromePath -Name "103" -Value "ddkjiahejlhfcafbddmgiahcphecmpfh;https://clients2.google.com/service/update2/crx" # Ublock Origin
+Set-ItemProperty -Path $chromePath -Name "101" -Value "enboaomnljigfhfjfoalacienlhjlfil;$chromeCrx" # Untrap Youtube
+Set-ItemProperty -Path $chromePath -Name "102" -Value "pganeibhckoanndahmnfggfoeofncnii;$chromeCrx" # Cold Turkey
+Set-ItemProperty -Path $chromePath -Name "103" -Value "ddkjiahejlhfcafbddmgiahcphecmpfh;$chromeCrx" # Ublock Origin
 
 # --- 2. EDGE --- #untested
 # ID: jfphahkinplobmabmgjmjgflbhjjddeb
 $edgePath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
+$edgeCrx = "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
 if (!(Test-Path $edgePath)) { New-Item -Path $edgePath -Force | Out-Null }
-Set-ItemProperty -Path $edgePath -Name "101" -Value "ngnefladcohhmmibccafkdbcijjoppdo;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Untrap Youtube
-Set-ItemProperty -Path $edgePath -Name "102" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Cold Turkey
-Set-ItemProperty -Path $edgePath -Name "103" -Value "odfafepnkmbhccpbejgmiehpchacaeak;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Ublock Origin
+Set-ItemProperty -Path $edgePath -Name "101" -Value "ngnefladcohhmmibccafkdbcijjoppdo;$edgeCrx" # Untrap Youtube
+Set-ItemProperty -Path $edgePath -Name "102" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;$edgeCrx" # Cold Turkey
+Set-ItemProperty -Path $edgePath -Name "103" -Value "odfafepnkmbhccpbejgmiehpchacaeak;$edgeCrx" # Ublock Origin
 
 
 Write-Host "✅ Chrome, and Edge extensions forced via Policy." -ForegroundColor Green
