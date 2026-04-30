@@ -21,13 +21,17 @@ Set-ItemProperty -Path $edgePolicyPath -Name "1" -Value "*" -Type String
 # ID: pganeibhckoanndahmnfggfoeofncnii
 $chromePath = "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist"
 if (!(Test-Path $chromePath)) { New-Item -Path $chromePath -Force | Out-Null }
-Set-ItemProperty -Path $chromePath -Name "102" -Value "enboaomnljigfhfjfoalacienlhjlfil;https://clients2.google.com/service/update2/crx" # Untrap Youtube
+Set-ItemProperty -Path $chromePath -Name "101" -Value "enboaomnljigfhfjfoalacienlhjlfil;https://clients2.google.com/service/update2/crx" # Untrap Youtube
+Set-ItemProperty -Path $chromePath -Name "102" -Value "pganeibhckoanndahmnfggfoeofncnii;https://clients2.google.com/service/update2/crx" # Cold Turkey
+Set-ItemProperty -Path $chromePath -Name "103" -Value "ddkjiahejlhfcafbddmgiahcphecmpfh;https://clients2.google.com/service/update2/crx" # Ublock Origin
 
-# --- 2. EDGE ---
+# --- 2. EDGE --- #untested
 # ID: jfphahkinplobmabmgjmjgflbhjjddeb
 $edgePath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
 if (!(Test-Path $edgePath)) { New-Item -Path $edgePath -Force | Out-Null }
-Set-ItemProperty -Path $edgePath -Name "101" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx"
+Set-ItemProperty -Path $edgePath -Name "101" -Value "ngnefladcohhmmibccafkdbcijjoppdo;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Untrap Youtube
+Set-ItemProperty -Path $edgePath -Name "102" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Cold Turkey
+Set-ItemProperty -Path $edgePath -Name "103" -Value "odfafepnkmbhccpbejgmiehpchacaeak;https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/microsoftedge/extension/update2/crx" # Ublock Origin
 
 
 Write-Host "✅ Chrome, and Edge extensions forced via Policy." -ForegroundColor Green
@@ -42,11 +46,19 @@ $policyJson = @'
     "ExtensionSettings": {
       "*": {
         "installation_mode": "blocked",
-        "blocked_install_message": "Custom extensions are disabled."
+        "blocked_install_message": "Blocked by Pesantren Teknologi"
       },
       "{2662ff67-b302-4363-95f3-b050218bd72c}": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/untrap-for-youtube/latest.xpi"
+      },
+        "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/4721638/ublock_origin-1.70.0.xpi"
+      },
+      "coldturkey@getcoldturkey.com": {
+        "installation_mode": "force_installed",
+        "install_url": "https://getcoldturkey.com/files/Cold_Turkey_Firefox_Addon.xpi"
       }
     }
   }
