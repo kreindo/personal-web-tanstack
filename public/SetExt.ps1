@@ -45,6 +45,7 @@ if (!(Test-Path $firefoxPolicyPath)) { New-Item -Path $firefoxPolicyPath -Force 
 $policyJson = @'
 {
   "policies": {
+    "BlockAboutProfiles": true,
     "ExtensionSettings": {
       "*": {
         "installation_mode": "blocked",
@@ -70,20 +71,29 @@ $policyJson = @'
 Set-Content -Path $firefoxPolicyPath -Value $policyJson -Encoding UTF8
 
 
-# --- BROWSER SETTINGS: Disable Incognito & Stealth Mode ---
-Write-Host "🛡️ Locking browser settings (No Incognito, No Stealth)..." -ForegroundColor Cyan
+# --- BROWSER SETTINGS: Disable Incognito & Stealth Mode & Add Person ---
+Write-Host "🛡️ Locking browser settings (No Incognito, No Stealth, No Add Person)..." -ForegroundColor Cyan
 
 # === 1. CHROME ===
 # Disables "New Incognito Window" option in menus
 $chromePolicyPath = "HKLM:\SOFTWARE\Policies\Google\Chrome"
 if (!(Test-Path $chromePolicyPath)) { New-Item -Path $chromePolicyPath -Force | Out-Null }
 Set-ItemProperty -Path $chromePolicyPath -Name "IncognitoModeAvailability" -Value 1 # 1 = Disabled
+Set-ItemProperty -Path $chromePolicyPath -Name "BrowserAddPersonEnabled" -Value 0
+Set-ItemProperty -Path $chromePolicyPath -Name "BrowserGuestModeEnabled" -Value 0
+Set-ItemProperty -Path $chromePolicyPath -Name "3rdPartyCookiesAllowed" -Value 0
+Set-ItemProperty -Path $chromePolicyPath -Name "HideSigninButton" -Value 1
+
 
 # --- EDGE ---
 # Disables "New InPrivate Window" option in menus
 $edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
 if (!(Test-Path $edgePolicyPath)) { New-Item -Path $edgePolicyPath -Force | Out-Null }
 Set-ItemProperty -Path $edgePolicyPath -Name "InPrivateModeAvailability" -Value 1 # 1 = Disabled
+Set-ItemProperty -Path $edgePolicyPath -Name "BrowserAddPersonEnabled" -Value 0
+Set-ItemProperty -Path $edgePolicyPath -Name "BrowserGuestModeEnabled" -Value 0
+Set-ItemProperty -Path $edgePolicyPath -Name "3rdPartyCookiesAllowed" -Value 0
+Set-ItemProperty -Path $edgePolicyPath -Name "HideSigninButton" -Value 1
 
 # === 3. FIREFOX (Stealth Mode) ===
 # Firefox doesn't have an "Incognito" mode in the same way, but it has "Private Browsing".
@@ -96,5 +106,7 @@ $ffPolicyPath = "HKLM:\SOFTWARE\Policies\Mozilla\Firefox"
 if (!(Test-Path $ffPolicyPath)) { New-Item -Path $ffPolicyPath -Force | Out-Null }
 # Note: This specific policy to hide the button is sometimes hard to enforce without enterprise config files.
 # The IncognitoModeAvailability = 1 for Chrome/Edge is usually the most critical part.
+
+
 
 Write-Host "✅ Incognito/InPrivate/Stealth mode restrictions applied." -ForegroundColor Green
