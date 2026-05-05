@@ -90,7 +90,7 @@ Set-ItemProperty -Path $chromePolicyPath -Name "HideSigninButton" -Value 1
 $edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
 if (!(Test-Path $edgePolicyPath)) { New-Item -Path $edgePolicyPath -Force | Out-Null }
 Set-ItemProperty -Path $edgePolicyPath -Name "InPrivateModeAvailability" -Value 1 # 1 = Disabled
-Set-ItemProperty -Path $edgePolicyPath -Name "BrowserAddPersonEnabled" -Value 0
+Set-ItemProperty -Path $edgePolicyPath -Name "BrowserAddProfileEnabled" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "BrowserGuestModeEnabled" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "3rdPartyCookiesAllowed" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "HideSigninButton" -Value 1
