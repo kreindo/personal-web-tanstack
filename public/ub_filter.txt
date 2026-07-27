@@ -1,0 +1,5 @@
+element picker filter :
+
+www.youtube.com##ytd-channel-video-player-renderer[rounded]
+gemini.google.com##div.attachment-container.action-card
+gemini.google.com##div.attachment-container.youtube
