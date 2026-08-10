@@ -79,6 +79,8 @@ Write-Host "🛡️ Locking browser settings (No Incognito, No Stealth, No Add P
 $chromePolicyPath = "HKLM:\SOFTWARE\Policies\Google\Chrome"
 if (!(Test-Path $chromePolicyPath)) { New-Item -Path $chromePolicyPath -Force | Out-Null }
 Set-ItemProperty -Path $chromePolicyPath -Name "IncognitoModeAvailability" -Value 1 # 1 = Disabled
+Set-ItemProperty -Path $chromePolicyPath -Name "AllowDeletingBrowserHistory" -Value 0
+Set-ItemProperty -Path $chromePolicyPath -Name "SavingBrowserHistoryDisabled" -Value 0
 Set-ItemProperty -Path $chromePolicyPath -Name "BrowserAddPersonEnabled" -Value 0
 Set-ItemProperty -Path $chromePolicyPath -Name "BrowserGuestModeEnabled" -Value 0
 Set-ItemProperty -Path $chromePolicyPath -Name "3rdPartyCookiesAllowed" -Value 0
@@ -90,6 +92,8 @@ Set-ItemProperty -Path $chromePolicyPath -Name "HideSigninButton" -Value 1
 $edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
 if (!(Test-Path $edgePolicyPath)) { New-Item -Path $edgePolicyPath -Force | Out-Null }
 Set-ItemProperty -Path $edgePolicyPath -Name "InPrivateModeAvailability" -Value 1 # 1 = Disabled
+Set-ItemProperty -Path $edgePolicyPath -Name "AllowDeletingBrowserHistory" -Value 0
+Set-ItemProperty -Path $edgePolicyPath -Name "SavingBrowserHistoryDisabled" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "BrowserAddProfileEnabled" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "BrowserGuestModeEnabled" -Value 0
 Set-ItemProperty -Path $edgePolicyPath -Name "3rdPartyCookiesAllowed" -Value 0
