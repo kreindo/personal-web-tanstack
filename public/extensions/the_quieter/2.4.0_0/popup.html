@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Remover</title>
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="lmao.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <div class="brand">
+          <img
+            class="brand-icon"
+            src="icons/icon-128.png"
+            alt="Music Remover"
+          />
+          <div>
+            <div class="brand-name">Pestek Music Remover</div>
+            <div class="brand-sub" id="ext-version">v1.0.0</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <!-- Manual language picker. chrome.i18n.getUILanguage() can't be
+             overridden — popup.js loads _locales/<lang>/messages.json
+             ourselves and routes every t() through it. Choice persists in
+             chrome.storage.local. RTL flips on Arabic/Urdu automatically. -->
+          <!-- <select class="lang-select" id="lang-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="ar" lang="ar">العربية</option>
+            <option value="ur" lang="ur">اردو</option>
+            <option value="bn" lang="bn">বাংলা</option>
+            <option value="hi" lang="hi">हिन्दी</option>
+            <option value="tr" lang="tr">Türkçe</option>
+            <option value="id" lang="id">Indonesia</option>
+          </select> -->
+          <button class="icon-btn" id="btn-refresh" title="Refresh">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path>
+              <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div style="align-self: center; pointer-events: none">
+        <img
+          src="https://oldschool.runescape.wiki/images/Capybara_%28submerged%29.gif?ea435&20240320192615"
+          alt="capy"
+          height="100"
+        />
+      </div>
+
+      <!-- Auto-remove music: default ON. Engages on every video and pauses
+         playback until the cleaned audio is ready (no original music plays). -->
+      <div class="mr-setting-row">
+        <div class="mr-setting-text">
+          <div class="mr-setting-label" data-i18n="auto_remove_label">
+            Auto-remove music
+          </div>
+          <div class="mr-setting-sub" data-i18n="auto_remove_sub">
+            Start on every video &amp; pause until the music is gone
+          </div>
+        </div>
+        <div class="kagak" id="kagak-boleh">ngga boleh :)</div>
+        <label class="mr-switch">
+          <input type="checkbox" id="auto-remove-toggle" checked />
+          <span class="mr-switch-slider"></span>
+        </label>
+      </div>
+
+      <!-- App update banner (only when desktop app has update available) -->
+      <div class="card card-update hidden" id="card-update">
+        <div class="update-row">
+          <svg
+            class="update-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12a9 9 0 1 1-9-9 9.74 9.74 0 0 1 7 3"></path>
+            <polyline points="21 3 21 9 15 9"></polyline>
+          </svg>
+          <div class="update-text">
+            <div class="update-title" data-i18n="update_available">
+              Update available
+            </div>
+            <div class="update-sub" id="update-versions">v1.0.0 &rarr; v?</div>
+          </div>
+          <button
+            class="btn btn-primary btn-sm"
+            id="btn-update"
+            data-i18n="update"
+          >
+            Update
+          </button>
+        </div>
+      </div>
+
+      <!-- Download desktop-app CTA — shown only when the local app is unreachable.
+         The extension is a thin client; without the desktop app there's nothing
+         it can do. Surfacing the install link in this state is the single most
+         useful thing the popup can render. -->
+      <div class="card card-download hidden" id="card-download">
+        <div class="dl-text">
+          <div class="dl-title" id="dl-title" data-i18n="get_desktop_app">
+            Get the free desktop app
+          </div>
+          <div class="dl-sub" id="dl-sub" data-i18n="desktop_app_intro">
+            The extension talks to a free Music Remover app on your computer.
+            Without it, the toggle on YouTube can't do anything.
+          </div>
+        </div>
+        <!-- "Try to launch the installed app" via the musicremover:// URL
+           scheme registered by the Windows installer. Visible only in State A
+           (we've ever seen /health succeed → flag in chrome.storage). State B
+           hides this and shows the platform list instead. -->
+        <button
+          class="btn btn-primary btn-block hidden"
+          id="btn-launch-app"
+          type="button"
+          data-i18n="open_music_remover"
+        >
+          Open Music Remover
+        </button>
+        <!-- After a failed Open click (5s probe times out), reveal this hint
+           and the platform list as the install/reinstall fallback. -->
+        <div
+          class="dl-fallback-hint hidden"
+          id="dl-fallback-hint"
+          data-i18n="fallback_couldnt_reach"
+        >
+          Couldn't reach the app. Install or reinstall below.
+        </div>
+        <div class="dl-platforms hidden" id="dl-platforms">
+          <a
+            class="dl-platform"
+            href="https://github.com/hijam-git/haram-music-remover/releases/latest/download/MusicRemover-Setup.exe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="dl-platform-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 3.5L9.75 2.176v9.452H0V3.5zm0 17l9.75 1.324v-9.328H0V20.5zm10.825 1.473L24 24V12.652H10.825v8.821zm0-19.946v8.852H24V0L10.825 2.027z"
+              />
+            </svg>
+            <span class="dl-platform-label">Windows</span>
+            <span class="dl-platform-cta" data-i18n="free_download"
+              >Free download</span
+            >
+          </a>
+          <a
+            class="dl-platform"
+            href="https://github.com/hijam-git/haram-music-remover/releases/latest/download/MusicRemover-Setup-amd64.deb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="dl-platform-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2c-1.84 0-3 1.61-3 4 0 1.36-.5 2.16-1.34 3.16C6.7 10.4 5 12.6 5 14.97c0 1.7 1.53 2.86 3.5 2.86.7 0 1.27-.2 1.84-.4-.22.45-.34.94-.34 1.46 0 1.5 1.34 2.61 3 2.61s3-1.11 3-2.61c0-.52-.12-1.01-.34-1.46.57.2 1.14.4 1.84.4 1.97 0 3.5-1.16 3.5-2.86 0-2.37-1.7-4.57-2.66-5.81C16.5 8.16 16 7.36 16 6c0-2.39-1.16-4-3-4-.5 0-.95.16-1.34.41C11.46 2.13 11 2 12 2zm-1.25 4.5c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zm2.5 0c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zm-2.75 3.25h3l-.5 1.25h-2l-.5-1.25z"
+              />
+            </svg>
+            <span class="dl-platform-label"
+              >Linux <span class="dl-platform-sub">.deb</span></span
+            >
+            <span class="dl-platform-cta" data-i18n="free_download"
+              >Free download</span
+            >
+          </a>
+          <a
+            class="dl-platform"
+            href="https://github.com/hijam-git/haram-music-remover/releases/latest/download/MusicRemover-Setup.dmg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="dl-platform-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.49 0-2.534-1.39-3.514-2.71-1.612-2.18-2.88-6.27-1.198-9.03 1.236-2.04 3.418-3.32 5.728-3.32 1.41 0 2.69.8 3.79.8 1.05 0 2.61-.83 4.21-.83.66 0 2.79.06 4.18 1.92-.11.07-2.51 1.45-2.49 4.34.02 3.4 2.92 4.55 2.95 4.57z"
+              />
+            </svg>
+            <span class="dl-platform-label"
+              >macOS <span class="dl-platform-sub">Apple Silicon</span></span
+            >
+            <span class="dl-platform-cta" data-i18n="free_download"
+              >Free download</span
+            >
+          </a>
+          <div class="dl-mirror">
+            Download not working? Try our mirror —
+            <a
+              href="https://musicremover.org/api/assets/MusicRemover-Setup.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Windows</a
+            >
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://musicremover.org/api/assets/MusicRemover-Setup.dmg"
+              target="_blank"
+              rel="noopener noreferrer"
+              >macOS</a
+            >
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://musicremover.org/api/assets/MusicRemover-Setup-amd64.deb"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Linux .deb</a
+            >
+          </div>
+        </div>
+        <a
+          class="btn btn-ghost btn-block"
+          id="btn-how-to-use"
+          href="https://musicremover.org/pc-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="how_to_use"
+        >
+          How to use
+        </a>
+      </div>
+
+      <!-- Primary status card -->
+      <div class="card card-status" id="card-status">
+        <div class="status-head">
+          <span class="status-icon" id="status-icon"></span>
+          <div class="status-text">
+            <div class="status-title" id="status-title" data-i18n="checking">
+              Checking...
+            </div>
+            <div class="status-sub" id="status-sub"></div>
+          </div>
+        </div>
+
+        <div class="progress-block hidden" id="progress-block">
+          <div class="progress-label">
+            <span id="progress-step">&nbsp;</span>
+            <span id="progress-pct" class="muted">0%</span>
+          </div>
+          <div class="bar"><div class="bar-fill" id="progress-fill"></div></div>
+        </div>
+      </div>
+
+      <!-- Current YouTube video card -->
+      <div class="card card-video hidden" id="card-video">
+        <div class="video-head">
+          <svg
+            class="video-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon
+              points="23 7 16 12 23 17 23 7"
+              fill="currentColor"
+            ></polygon>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          </svg>
+          <div class="video-text">
+            <div class="video-title" id="video-title">Current video</div>
+            <div class="video-sub" id="video-sub"></div>
+          </div>
+          <span class="badge hidden" id="video-badge" data-i18n="cached_badge"
+            >Cached</span
+          >
+        </div>
+        <div class="ttl-row hidden" id="ttl-row">
+          <span class="muted small" data-i18n="expires_in">Expires in</span>
+          <span class="ttl-value" id="ttl-remaining">—</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button
+          class="btn btn-primary"
+          id="btn-open"
+          disabled
+          data-i18n="open_app"
+        >
+          Open app
+        </button>
+        <button
+          class="btn btn-ghost"
+          id="btn-settings"
+          disabled
+          data-i18n="settings"
+        >
+          Settings
+        </button>
+      </div>
+
+      <!-- "Also from us" — small cross-sell to the maintainer's other Muslim-
+         focused products. Kept compact (just product + one-line tagline)
+         so it doesn't compete with the primary status above. -->
+      <!-- <div class="card card-products" id="card-products">
+        <div class="products-title" data-i18n="products_title">
+          Also from us
+        </div>
+        <a
+          class="product-row"
+          href="https://chromewebstore.google.com/detail/pordaai-blur-haram-object/ofhlminijomemliahkjjbgcbfoimjiaj"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="product-name">
+            PordaAI <span class="product-sub">· Chrome</span>
+          </div>
+          <div class="product-desc" data-i18n="pordaai_desc">
+            Blur haram in images and videos
+          </div>
+        </a>
+        <a
+          class="product-row"
+          href="https://muslimbrowser.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="product-name">
+            Muslim Browser <span class="product-sub">· Mobile</span>
+          </div>
+          <div class="product-desc" data-i18n="muslimbrowser_desc">
+            The secure browser for Muslims
+          </div>
+        </a>
+      </div> -->
+
+      <!-- Footer links: how-to, public bug tracker, direct contact email.
+         Bug reports go to the public release repo (haram-music-remover) since
+         the source repo is private. Contact is the maintainer's mailbox for
+         non-bug questions. -->
+      <!-- <div class="footer-links">
+        <a
+          class="footer-link"
+          href="https://musicremover.org/pc-app#how-it-works"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span data-i18n="how_it_works">How it works</span>
+        </a>
+        <a
+          class="footer-link"
+          href="https://github.com/hijam-git/haram-music-remover/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span data-i18n="report_bug">Report a bug</span>
+        </a>
+        <a
+          class="footer-link"
+          href="mailto:hijamweb@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span data-i18n="contact">Contact</span>
+        </a>
+      </div>
+      <details class="mr-donate">
+        <summary>🤲 Donate — support this non-profit project</summary>
+        <div class="mr-donate-opts">
+          <div>
+            🇧🇩 <strong>Bangladesh</strong> — bKash (Send Money):
+            <b>01823170383</b>
+          </div>
+          <div>
+            🌍 <strong>Other countries</strong> —
+            <a
+              href="https://www.paypal.com/paypalme/IqraWave"
+              target="_blank"
+              rel="noopener noreferrer"
+              >PayPal (IqraWave) &rarr;</a
+            >
+          </div>
+        </div>
+      </details> -->
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="lmao.js"></script>
+  </body>
+</html>

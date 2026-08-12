@@ -1,0 +1,582 @@
+{
+   "_comment": {
+      "message": "English (en) — base locale. Keys mirror the data-i18n attributes in popup.html and the chrome.i18n.getMessage calls in popup.js."
+   },
+   "_comment_content": {
+      "message": "Below: strings used by the on-YouTube content script (content.js) — toasts, button tooltips, cache-duration labels."
+   },
+   "_comment_welcome": {
+      "message": "Below: strings for the welcome / update page (welcome.html + welcome.js)."
+   },
+   "auto_remove_label": {
+      "message": "إزالة الموسيقى تلقائياً"
+   },
+   "auto_remove_sub": {
+      "message": "يزيل الموسيقى تلقائياً من كل فيديو"
+   },
+   "bg_app_not_running": {
+      "message": "تطبيق Music Remover لسطح المكتب لا يعمل"
+   },
+   "bg_title": {
+      "message": "Music Remover"
+   },
+   "bg_update_available": {
+      "message": "Music Remover — يتوفر تحديث v$VER$",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "btn_cancel": {
+      "message": "إلغاء"
+   },
+   "btn_dismiss": {
+      "message": "تجاهل"
+   },
+   "btn_got_it": {
+      "message": "فهمت"
+   },
+   "btn_hide": {
+      "message": "إخفاء"
+   },
+   "btn_keep_running": {
+      "message": "متابعة التشغيل"
+   },
+   "btn_ok": {
+      "message": "موافق"
+   },
+   "btn_stop_process": {
+      "message": "أوقفه وعالِج هذا الفيديو"
+   },
+   "btn_try_again": {
+      "message": "حاول مرة أخرى"
+   },
+   "cached_badge": {
+      "message": "مخزّن مؤقتاً"
+   },
+   "cached_label": {
+      "message": "مخزّن مؤقتاً"
+   },
+   "checking": {
+      "message": "جارٍ التحقق..."
+   },
+   "click_below_to_open": {
+      "message": "انقر أدناه لفتح التطبيق المثبّت."
+   },
+   "coming_soon": {
+      "message": "قريباً"
+   },
+   "confirm_delete_cached": {
+      "message": "هل تريد حذف الصوت الخالي من الموسيقى المخزّن مؤقتاً لهذا الفيديو؟"
+   },
+   "contact": {
+      "message": "تواصل معنا"
+   },
+   "couldnt_reach_short": {
+      "message": "تعذّر الوصول إلى التطبيق"
+   },
+   "desktop_app_intro": {
+      "message": "تتواصل الإضافة مع تطبيق Music Remover المجاني على جهاز الكمبيوتر لديك، وبدونه لن يعمل زر التبديل في YouTube."
+   },
+   "desktop_app_not_running": {
+      "message": "تطبيق سطح المكتب لا يعمل"
+   },
+   "downloading_setup_files": {
+      "message": "جارٍ تنزيل الملفات المطلوبة (مرة واحدة)."
+   },
+   "duration_day": {
+      "message": "$COUNT$ يوم",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_days": {
+      "message": "$COUNT$ أيام",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hour": {
+      "message": "$COUNT$ ساعة",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hours": {
+      "message": "$COUNT$ ساعات",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_min": {
+      "message": "$COUNT$ دقيقة",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_mins": {
+      "message": "$COUNT$ دقائق",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "expired": {
+      "message": "منتهي الصلاحية"
+   },
+   "expires_in": {
+      "message": "ينتهي خلال"
+   },
+   "fallback_couldnt_reach": {
+      "message": "تعذّر الوصول إلى التطبيق. ثبّته أو أعد تثبيته أدناه."
+   },
+   "finishing_setup": {
+      "message": "جارٍ إنهاء الإعداد الأول"
+   },
+   "free_download": {
+      "message": "تنزيل مجاني"
+   },
+   "get_desktop_app": {
+      "message": "احصل على تطبيق سطح المكتب المجاني"
+   },
+   "how_it_works": {
+      "message": "كيف يعمل"
+   },
+   "how_to_use": {
+      "message": "كيفية الاستخدام"
+   },
+   "install_or_open": {
+      "message": "ثبّت Music Remover أو افتحه لاستخدام هذه الإضافة."
+   },
+   "install_or_reinstall": {
+      "message": "ثبّته أو أعد تثبيته أدناه."
+   },
+   "music_removed_ready": {
+      "message": "الصوت الخالي من الموسيقى جاهز"
+   },
+   "music_remover_is_running": {
+      "message": "Music Remover يعمل"
+   },
+   "music_remover_isnt_running": {
+      "message": "Music Remover لا يعمل"
+   },
+   "muslimbrowser_desc": {
+      "message": "المتصفح الآمن للمسلمين"
+   },
+   "mute_ads_label": {
+      "message": "كتم صوت الإعلانات"
+   },
+   "mute_ads_sub": {
+      "message": "يكتم صوت إعلانات يوتيوب أثناء تشغيلها"
+   },
+   "not_processed_yet": {
+      "message": "لم تتم المعالجة بعد"
+   },
+   "open_app": {
+      "message": "افتح التطبيق"
+   },
+   "open_music_remover": {
+      "message": "افتح Music Remover"
+   },
+   "open_youtube_to_use": {
+      "message": "افتح أي فيديو على YouTube لاستخدامه."
+   },
+   "opening": {
+      "message": "جارٍ الفتح..."
+   },
+   "pause_until_label": {
+      "message": "إيقاف الفيديو حتى تُزال الموسيقى"
+   },
+   "pause_until_sub": {
+      "message": "يوقف الفيديو مؤقتاً حتى يصبح الصوت الخالي من الموسيقى جاهزاً"
+   },
+   "perm_full_guide": {
+      "message": "دليل الإعداد الكامل →"
+   },
+   "perm_see_fix": {
+      "message": "شاهد الحل مع لقطة شاشة →"
+   },
+   "perm_step1": {
+      "message": "\u003Cstrong>1.\u003C/strong> يُرجى التأكد من أن \u003Cstrong>تطبيق Music Remover المساعد على الكمبيوتر قيد التشغيل\u003C/strong>. ألا تملكه بعد؟ انقر على \u003Cstrong>أيقونة Music Remover\u003C/strong> في شريط أدوات المتصفح لتنزيله."
+   },
+   "perm_step2": {
+      "message": "\u003Cstrong>2.\u003C/strong> إذا كان التطبيق يعمل بالفعل، فقد يكون Chrome يحجبه. انقر على الأيقونة الموجودة \u003Cstrong>يسار شريط العنوان\u003C/strong> واسمح بإذن \u003Cstrong>\"التطبيق على الجهاز\"\u003C/strong> لهذا الموقع، ثم انقر على زر التبديل مرة أخرى."
+   },
+   "perm_title": {
+      "message": "تطبيق Music Remover غير متصل"
+   },
+   "pordaai_desc": {
+      "message": "طمس المحتوى الحرام في الصور ومقاطع الفيديو"
+   },
+   "processing_this_video": {
+      "message": "جارٍ معالجة هذا الفيديو"
+   },
+   "processing_video": {
+      "message": "جارٍ معالجة الفيديو"
+   },
+   "products_title": {
+      "message": "أيضاً من إنتاجنا"
+   },
+   "report_bug": {
+      "message": "الإبلاغ عن خلل"
+   },
+   "settings": {
+      "message": "الإعدادات"
+   },
+   "stage_done": {
+      "message": "تم"
+   },
+   "stage_downloading": {
+      "message": "جارٍ تحميل الصوت... (يعتمد الوقت على طول الفيديو)"
+   },
+   "stage_encoding": {
+      "message": "جارٍ الإنهاء... أوشكنا على الانتهاء"
+   },
+   "stage_extracting": {
+      "message": "جارٍ إزالة الموسيقى... يُرجى الانتظار"
+   },
+   "stage_processing": {
+      "message": "جارٍ المعالجة"
+   },
+   "stage_resuming": {
+      "message": "جارٍ الاستئناف..."
+   },
+   "stage_starting": {
+      "message": "جارٍ البدء..."
+   },
+   "stage_working": {
+      "message": "جارٍ العمل"
+   },
+   "storage_label": {
+      "message": "التخزين"
+   },
+   "title_audio_ready": {
+      "message": "الصوت الخالي من الموسيقى جاهز"
+   },
+   "title_cache_duration": {
+      "message": "مدة التخزين المؤقت لهذا الفيديو"
+   },
+   "title_cached_change": {
+      "message": "مخزّن مؤقتاً لمدة $LABEL$ — غيّرها للتحديث أو الحذف",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "title_click_restore": {
+      "message": "انقر لاستعادة الصوت الأصلي"
+   },
+   "title_finishing_setup": {
+      "message": "يُنهي Music Remover الإعداد الأول..."
+   },
+   "title_removal_progress": {
+      "message": "إزالة الموسيقى قيد التنفيذ..."
+   },
+   "title_remove_music": {
+      "message": "إزالة الموسيقى (تطبيق Music Remover)"
+   },
+   "title_show_progress": {
+      "message": "عرض تقدّم Music Remover"
+   },
+   "title_will_cache": {
+      "message": "سيُخزّن مؤقتاً لمدة $LABEL$ عند المعالجة",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_set": {
+      "message": "تم ضبط مدة التخزين المؤقت على $LABEL$.",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_update_failed": {
+      "message": "فشل تحديث مدة التخزين المؤقت."
+   },
+   "toast_cached_deleted": {
+      "message": "تم حذف الصوت المخزّن مؤقتاً."
+   },
+   "toast_conflict": {
+      "message": "⚠ تتم معالجة فيديو آخر بالفعل."
+   },
+   "toast_delete_failed": {
+      "message": "فشل حذف الصوت المخزّن مؤقتاً."
+   },
+   "toast_error": {
+      "message": "خطأ: $MSG$",
+      "placeholders": {
+         "msg": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_failed_load": {
+      "message": "فشل تحميل الصوت المعالَج."
+   },
+   "toast_first_run": {
+      "message": "يُنهي Music Remover الإعداد الأول ($PCT$%). حاول مرة أخرى بعد لحظات.",
+      "placeholders": {
+         "pct": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_no_video": {
+      "message": "تعذّر العثور على عنصر الفيديو."
+   },
+   "toast_original_restored": {
+      "message": "تمت استعادة الصوت الأصلي."
+   },
+   "toast_processing_failed": {
+      "message": "فشلت المعالجة — عادةً ما تكون هذه مشكلة شبكة مؤقتة."
+   },
+   "toast_removing_music": {
+      "message": "جارٍ إزالة الموسيقى..."
+   },
+   "toast_time_depends": {
+      "message": "يعتمد الوقت على طول الفيديو — أما إعادة التشغيل فتكون فورية."
+   },
+   "toast_unexpected": {
+      "message": "استجابة غير متوقعة من التطبيق."
+   },
+   "toast_will_cache": {
+      "message": "سيُخزّن مؤقتاً لمدة $LABEL$ بعد المعالجة.",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "ttl_15d": {
+      "message": "15 يوماً"
+   },
+   "ttl_1d": {
+      "message": "يوم واحد"
+   },
+   "ttl_1y": {
+      "message": "سنة واحدة"
+   },
+   "ttl_30d": {
+      "message": "30 يوماً"
+   },
+   "ttl_3d": {
+      "message": "3 أيام"
+   },
+   "ttl_6m": {
+      "message": "6 أشهر"
+   },
+   "ttl_7d": {
+      "message": "7 أيام"
+   },
+   "ttl_delete": {
+      "message": "حذف"
+   },
+   "ttl_never": {
+      "message": "أبداً"
+   },
+   "ttl_prompt": {
+      "message": "التخزين المؤقت..."
+   },
+   "update": {
+      "message": "تحديث"
+   },
+   "update_available": {
+      "message": "يتوفر تحديث"
+   },
+   "update_req_body": {
+      "message": "يتوفر إصدار أحدث من تطبيق Music Remover لسطح المكتب وهو مطلوب للمتابعة. يُرجى تثبيت التحديث أولاً."
+   },
+   "update_req_link": {
+      "message": "افتح Music Remover للتحديث →"
+   },
+   "update_req_title": {
+      "message": "تحديث Music Remover مطلوب"
+   },
+   "use_toggle_to_play": {
+      "message": "استخدم زر التبديل على مشغّل YouTube للتشغيل."
+   },
+   "use_toggle_to_start": {
+      "message": "استخدم زر التبديل على مشغّل YouTube للبدء."
+   },
+   "w_donate_bd": {
+      "message": "بنغلاديش: bKash (إرسال أموال) 01823170383"
+   },
+   "w_donate_cta": {
+      "message": "تبرّع عبر IqraWave"
+   },
+   "w_donate_desc": {
+      "message": "نحن مشروع غير ربحي. لمساعدتنا على مواصلة تحسين هذه الأداة المعتمدة على الذكاء الاصطناعي من أجل الأمة، يُرجى التفكير في تبرّع بسيط عبر IqraWave."
+   },
+   "w_donate_title": {
+      "message": "ادعم هذا المشروع"
+   },
+   "w_feedback_cta": {
+      "message": "افتح النموذج →"
+   },
+   "w_feedback_desc": {
+      "message": "اشترك لتصلك تحديثاتنا مباشرةً. مجرد نموذج قصير لا يستغرق سوى 30 ثانية."
+   },
+   "w_feedback_title": {
+      "message": "يسعدنا سماع ملاحظاتك"
+   },
+   "w_hero_cta": {
+      "message": "ابدأ في خطوتين"
+   },
+   "w_hero_sub_install": {
+      "message": "اكتم وأزل الموسيقى الخلفية من أي فيديو على YouTube — سريع، مجاني، وخاص."
+   },
+   "w_hero_sub_update": {
+      "message": "أنت الآن على الإصدار v$VER$. شكراً لإبقائه محدّثاً.",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "w_hero_title_install": {
+      "message": "شكراً لتثبيتك Music Remover"
+   },
+   "w_hero_title_update": {
+      "message": "مزيل الموسيقى الحرام. فائق السرعة، مجاني وبلا حدود"
+   },
+   "w_howto_cta": {
+      "message": "شاهد دليل الإعداد من دقيقتين →"
+   },
+   "w_link_copied": {
+      "message": "تم نسخ الرابط!"
+   },
+   "w_mbrowser_desc": {
+      "message": "متصفح مصمم للمسلمين، مع العديد من الميزات الإسلامية المدمجة."
+   },
+   "w_modal_badge": {
+      "message": "✨ تحديث ضخم"
+   },
+   "w_modal_callout": {
+      "message": "للحصول على هذا، يجب عليك تحديث تطبيق الكمبيوتر المساعد إلى أحدث إصدار."
+   },
+   "w_modal_hl": {
+      "message": "أول صوت نقي خلال نحو 20 ثانية — حتى في مقاطع الفيديو الطويلة. فائق السرعة، ويُبثّ ببساطة أثناء مشاهدتك."
+   },
+   "w_modal_later": {
+      "message": "ربما لاحقاً"
+   },
+   "w_modal_share_btn": {
+      "message": "شاركه مع صديق"
+   },
+   "w_modal_support": {
+      "message": "هذا مشروع غير ربحي ونحن نعمل بجد من أجل الأمة. يُرجى المشاركة والدعم — دعاؤك ومشاركتك صدقة جارية."
+   },
+   "w_modal_title": {
+      "message": "يعمل الآن على أي فيديو طويل"
+   },
+   "w_modal_update_btn": {
+      "message": "حدّث تطبيق الكمبيوتر →"
+   },
+   "w_other_title": {
+      "message": "استكشف مشاريعنا الأخرى"
+   },
+   "w_pill_installed": {
+      "message": "تم التثبيت"
+   },
+   "w_pill_updated": {
+      "message": "تم التحديث"
+   },
+   "w_porda_desc": {
+      "message": "يطمس تلقائياً المحتوى الحرام في الصور ومقاطع الفيديو. مصمم لسطح المكتب."
+   },
+   "w_prev_li1": {
+      "message": "تم الإصلاح: تجمّد الكمبيوتر أثناء جلسات المعالجة الطويلة"
+   },
+   "w_prev_li2": {
+      "message": "تم الإصلاح: مشاكل الذاكرة في مقاطع الفيديو الطويلة"
+   },
+   "w_prev_li3": {
+      "message": "تم الإصلاح: التأخّر وعدم استجابة التشغيل"
+   },
+   "w_prev_li4": {
+      "message": "جديد: أصبح يدعم الآن معالجة مقاطع الفيديو الطويلة جداً"
+   },
+   "w_prev_li5": {
+      "message": "تحسينات عامة في الأداء والاستقرار"
+   },
+   "w_prev_li6": {
+      "message": "جديد: دعم macOS"
+   },
+   "w_prev_updates": {
+      "message": "التحديثات السابقة"
+   },
+   "w_setup_title": {
+      "message": "ابدأ في خطوتين"
+   },
+   "w_step1_cta": {
+      "message": "نزّله على جهاز الكمبيوتر لديك"
+   },
+   "w_step1_desc": {
+      "message": "يقوم تطبيق سطح المكتب بإزالة الموسيقى. أما الإضافة فتتواصل معه فقط من داخل YouTube."
+   },
+   "w_step1_title": {
+      "message": "ثبّت تطبيق الكمبيوتر المساعد"
+   },
+   "w_step2_cta": {
+      "message": "شاهد كيفية الاستخدام →"
+   },
+   "w_step2_desc": {
+      "message": "شرح من دقيقتين يوضّح زر التبديل على YouTube وكيفية إدارة الصوت المخزّن مؤقتاً."
+   },
+   "w_step2_title": {
+      "message": "تعلّم كيفية استخدامه"
+   },
+   "w_support_closing": {
+      "message": "هل ستدعمنا؟"
+   },
+   "w_support_desc": {
+      "message": "صُنع Music Remover على يد فريق صغير خدمةً للمجتمع المسلم. تقييمك بخمس نجوم ومشاركتك التطبيق مع الأصدقاء يفعلان أكثر مما تتصوّر — فبهما نصل إلى المزيد من المسلمين حول العالم ونواصل تطوير التطبيق."
+   },
+   "w_support_rate": {
+      "message": "قيّمنا بخمس نجوم على Chrome Web Store"
+   },
+   "w_support_share": {
+      "message": "شاركه مع صديق"
+   },
+   "w_support_title": {
+      "message": "صنعه فريق صغير خدمةً للأمة"
+   },
+   "w_update_li1": {
+      "message": "🔇 يكتم صوت إعلانات يوتيوب تلقائياً، فلا تسمع موسيقاها."
+   },
+   "w_update_li2": {
+      "message": "يزيل الموسيقى تلقائياً في كل فيديو — دون أي نقر."
+   },
+   "w_update_li3": {
+      "message": "يوقف الفيديو مؤقتاً حتى تختفي الموسيقى، فلا تسمعها أبداً."
+   },
+   "w_update_li4": {
+      "message": "تشغيل أكثر سلاسة — لم تعد الإعلانات تتجمد أثناء المعالجة."
+   },
+   "w_update_title": {
+      "message": "ما الجديد في v2.4.0"
+   },
+   "w_wait_body": {
+      "message": "إن لم يُحدَّث تطبيق الكمبيوتر المرافق لديك بعد، فقد يستغرق وصول تحديثنا إلى الجميع بضع ساعات. يُرجى الانتظار قليلاً والمحاولة مرة أخرى بعد وقت قصير — إنه جهد لمرة واحدة فقط. شكراً لصبرك. 🤲"
+   },
+   "w_wait_title": {
+      "message": "يُرجى الانتظار قليلاً — هذا انتظار لمرة واحدة"
+   }
+}

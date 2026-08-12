@@ -1,0 +1,582 @@
+{
+  "_comment": {
+    "message": "English (en) — base locale. Keys mirror the data-i18n attributes in popup.html and the chrome.i18n.getMessage calls in popup.js."
+  },
+  "_comment_content": {
+    "message": "Below: strings used by the on-YouTube content script (content.js) — toasts, button tooltips, cache-duration labels."
+  },
+  "_comment_welcome": {
+    "message": "Below: strings for the welcome / update page (welcome.html + welcome.js)."
+  },
+  "auto_remove_label": {
+    "message": "Auto-remove music"
+  },
+  "auto_remove_sub": {
+    "message": "Start removing music on every video"
+  },
+  "bg_app_not_running": {
+    "message": "Music Remover agent not running"
+  },
+  "bg_title": {
+    "message": "Music Remover"
+  },
+  "bg_update_available": {
+    "message": "Music Remover — update v$VER$ available",
+    "placeholders": {
+      "ver": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_cancel": {
+    "message": "Cancel"
+  },
+  "btn_dismiss": {
+    "message": "Dismiss"
+  },
+  "btn_got_it": {
+    "message": "Got it"
+  },
+  "btn_hide": {
+    "message": "Hide"
+  },
+  "btn_keep_running": {
+    "message": "Keep running"
+  },
+  "btn_ok": {
+    "message": "OK"
+  },
+  "btn_stop_process": {
+    "message": "Stop & process this"
+  },
+  "btn_try_again": {
+    "message": "Try again"
+  },
+  "cached_badge": {
+    "message": "Cached"
+  },
+  "cached_label": {
+    "message": "Cached"
+  },
+  "checking": {
+    "message": "Checking..."
+  },
+  "click_below_to_open": {
+    "message": "Click below to open the installed app."
+  },
+  "coming_soon": {
+    "message": "Coming soon"
+  },
+  "confirm_delete_cached": {
+    "message": "Delete the cached music-removed audio for this video?"
+  },
+  "contact": {
+    "message": "Contact"
+  },
+  "couldnt_reach_short": {
+    "message": "Couldn't reach the app"
+  },
+  "desktop_app_intro": {
+    "message": "The extension talks to a free Music Remover app on your computer. Without it, the toggle on YouTube can't do anything."
+  },
+  "desktop_app_not_running": {
+    "message": "Agent not running"
+  },
+  "downloading_setup_files": {
+    "message": "Downloading required files (one-time)."
+  },
+  "duration_day": {
+    "message": "$COUNT$ day",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "duration_days": {
+    "message": "$COUNT$ days",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "duration_hour": {
+    "message": "$COUNT$ hour",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "duration_hours": {
+    "message": "$COUNT$ hours",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "duration_min": {
+    "message": "$COUNT$ min",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "duration_mins": {
+    "message": "$COUNT$ mins",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "expired": {
+    "message": "expired"
+  },
+  "expires_in": {
+    "message": "Expires in"
+  },
+  "fallback_couldnt_reach": {
+    "message": "Couldn't reach the app. Install or reinstall below."
+  },
+  "finishing_setup": {
+    "message": "Finishing first-run setup"
+  },
+  "free_download": {
+    "message": "Free download"
+  },
+  "get_desktop_app": {
+    "message": "Get the free desktop app"
+  },
+  "how_it_works": {
+    "message": "How it works"
+  },
+  "how_to_use": {
+    "message": "How to use"
+  },
+  "install_or_open": {
+    "message": "Install or open Music Remover to use this extension."
+  },
+  "install_or_reinstall": {
+    "message": "Install or reinstall below."
+  },
+  "music_removed_ready": {
+    "message": "Music-removed audio ready"
+  },
+  "music_remover_is_running": {
+    "message": "Music Remover is running"
+  },
+  "music_remover_isnt_running": {
+    "message": "Music Remover isn't running"
+  },
+  "muslimbrowser_desc": {
+    "message": "The secure browser for Muslims"
+  },
+  "mute_ads_label": {
+    "message": "Mute ads"
+  },
+  "mute_ads_sub": {
+    "message": "Silence the sound of YouTube ads while they play"
+  },
+  "not_processed_yet": {
+    "message": "Not processed yet"
+  },
+  "open_app": {
+    "message": "Open app"
+  },
+  "open_music_remover": {
+    "message": "Open Music Remover"
+  },
+  "open_youtube_to_use": {
+    "message": "Open any YouTube video to use it."
+  },
+  "opening": {
+    "message": "Opening..."
+  },
+  "pause_until_label": {
+    "message": "Pause until music removed"
+  },
+  "pause_until_sub": {
+    "message": "Hold playback until the cleaned audio is ready"
+  },
+  "perm_full_guide": {
+    "message": "Full setup guide →"
+  },
+  "perm_see_fix": {
+    "message": "See the fix with a screenshot →"
+  },
+  "perm_step1": {
+    "message": "\u003Cstrong>1.\u003C/strong> Please make sure the \u003Cstrong>Music Remover PC helper app is running\u003C/strong>. Don't have it yet? Click the \u003Cstrong>Music Remover icon\u003C/strong> in your browser toolbar to download it."
+  },
+  "perm_step2": {
+    "message": "\u003Cstrong>2.\u003C/strong> If the app is already running, Chrome may be blocking it. Click the icon to the \u003Cstrong>left of the URL bar\u003C/strong> and allow \u003Cstrong>\"App on device\"\u003C/strong> permission for this site, then click the toggle again."
+  },
+  "perm_title": {
+    "message": "Music Remover app not connected"
+  },
+  "pordaai_desc": {
+    "message": "Blur haram in images and videos"
+  },
+  "processing_this_video": {
+    "message": "Processing this video"
+  },
+  "processing_video": {
+    "message": "Processing video"
+  },
+  "products_title": {
+    "message": "Also from us"
+  },
+  "report_bug": {
+    "message": "Report a bug"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "stage_done": {
+    "message": "Done"
+  },
+  "stage_downloading": {
+    "message": "Loading audio... (time depends on video length)"
+  },
+  "stage_encoding": {
+    "message": "Finalizing... Almost done"
+  },
+  "stage_extracting": {
+    "message": "Removing music... please wait"
+  },
+  "stage_processing": {
+    "message": "Processing"
+  },
+  "stage_resuming": {
+    "message": "Resuming..."
+  },
+  "stage_starting": {
+    "message": "Starting..."
+  },
+  "stage_working": {
+    "message": "Working"
+  },
+  "storage_label": {
+    "message": "Storage"
+  },
+  "title_audio_ready": {
+    "message": "Music-removed audio is ready"
+  },
+  "title_cache_duration": {
+    "message": "Cache duration for this video"
+  },
+  "title_cached_change": {
+    "message": "Cached for $LABEL$ — change to update or delete",
+    "placeholders": {
+      "label": {
+        "content": "$1"
+      }
+    }
+  },
+  "title_click_restore": {
+    "message": "Click to restore original audio"
+  },
+  "title_finishing_setup": {
+    "message": "Music Remover is finishing first-run setup..."
+  },
+  "title_removal_progress": {
+    "message": "Music removal in progress..."
+  },
+  "title_remove_music": {
+    "message": "Remove music (Music Remover app)"
+  },
+  "title_show_progress": {
+    "message": "Show Music Remover progress"
+  },
+  "title_will_cache": {
+    "message": "Will cache for $LABEL$ when processed",
+    "placeholders": {
+      "label": {
+        "content": "$1"
+      }
+    }
+  },
+  "toast_cache_set": {
+    "message": "Cache duration set to $LABEL$.",
+    "placeholders": {
+      "label": {
+        "content": "$1"
+      }
+    }
+  },
+  "toast_cache_update_failed": {
+    "message": "Failed to update cache duration."
+  },
+  "toast_cached_deleted": {
+    "message": "Cached audio deleted."
+  },
+  "toast_conflict": {
+    "message": "⚠ Another video is already being processed."
+  },
+  "toast_delete_failed": {
+    "message": "Failed to delete cached audio."
+  },
+  "toast_error": {
+    "message": "Error: $MSG$",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toast_failed_load": {
+    "message": "Failed to load processed audio."
+  },
+  "toast_first_run": {
+    "message": "Music Remover is finishing first-run setup ($PCT$%). Try again in a moment.",
+    "placeholders": {
+      "pct": {
+        "content": "$1"
+      }
+    }
+  },
+  "toast_no_video": {
+    "message": "Could not find video element."
+  },
+  "toast_original_restored": {
+    "message": "Original audio restored."
+  },
+  "toast_processing_failed": {
+    "message": "Processing failed — this is usually a temporary network issue."
+  },
+  "toast_removing_music": {
+    "message": "Removing music..."
+  },
+  "toast_time_depends": {
+    "message": "Time depends on video length — replays are instant."
+  },
+  "toast_unexpected": {
+    "message": "Unexpected response from app."
+  },
+  "toast_will_cache": {
+    "message": "Will cache for $LABEL$ once processed.",
+    "placeholders": {
+      "label": {
+        "content": "$1"
+      }
+    }
+  },
+  "ttl_15d": {
+    "message": "15 days"
+  },
+  "ttl_1d": {
+    "message": "1 day"
+  },
+  "ttl_1y": {
+    "message": "1 year"
+  },
+  "ttl_30d": {
+    "message": "30 days"
+  },
+  "ttl_3d": {
+    "message": "3 days"
+  },
+  "ttl_6m": {
+    "message": "6 months"
+  },
+  "ttl_7d": {
+    "message": "7 days"
+  },
+  "ttl_delete": {
+    "message": "Delete"
+  },
+  "ttl_never": {
+    "message": "Never"
+  },
+  "ttl_prompt": {
+    "message": "Cache..."
+  },
+  "update": {
+    "message": "Update"
+  },
+  "update_available": {
+    "message": "Update available"
+  },
+  "update_req_body": {
+    "message": "A newer version of the Music Remover desktop app is available and is required to continue. Please install the update first."
+  },
+  "update_req_link": {
+    "message": "Open Music Remover to update →"
+  },
+  "update_req_title": {
+    "message": "Music Remover update required"
+  },
+  "use_toggle_to_play": {
+    "message": "Use the toggle on the YouTube player to play."
+  },
+  "use_toggle_to_start": {
+    "message": "Use the toggle on the YouTube player to start."
+  },
+  "w_donate_bd": {
+    "message": "Bangladesh: bKash (Send Money) 01823170383"
+  },
+  "w_donate_cta": {
+    "message": "Donate through IqraWave"
+  },
+  "w_donate_desc": {
+    "message": "We're a non-profit project. To help us keep improving this AI tool for the Ummah, please consider a small donation through IqraWave."
+  },
+  "w_donate_title": {
+    "message": "Support this project"
+  },
+  "w_feedback_cta": {
+    "message": "Open the form →"
+  },
+  "w_feedback_desc": {
+    "message": "Subscribe to get updates directly from us. Just one short form — 30 seconds."
+  },
+  "w_feedback_title": {
+    "message": "We'd love your feedback"
+  },
+  "w_hero_cta": {
+    "message": "Get started in 2 steps"
+  },
+  "w_hero_sub_install": {
+    "message": "Mute & remove background music from any YouTube video — fast, free, private."
+  },
+  "w_hero_sub_update": {
+    "message": "You're now on v$VER$. Thanks for keeping it up to date.",
+    "placeholders": {
+      "ver": {
+        "content": "$1"
+      }
+    }
+  },
+  "w_hero_title_install": {
+    "message": "Thank you for installing Music Remover"
+  },
+  "w_hero_title_update": {
+    "message": "Haram Music Remover. Superfast, Free & Unlimited"
+  },
+  "w_howto_cta": {
+    "message": "See the 2-minute setup guide →"
+  },
+  "w_link_copied": {
+    "message": "Link copied!"
+  },
+  "w_mbrowser_desc": {
+    "message": "A browser built for Muslims, with many Islamic features built in."
+  },
+  "w_modal_badge": {
+    "message": "✨ Huge Update"
+  },
+  "w_modal_callout": {
+    "message": "To get this, you must update the PC helper app to the latest version."
+  },
+  "w_modal_hl": {
+    "message": "First cleaned audio in about 20 seconds — even on long videos. Super fast, and it just streams as you watch."
+  },
+  "w_modal_later": {
+    "message": "Maybe later"
+  },
+  "w_modal_share_btn": {
+    "message": "Share with a friend"
+  },
+  "w_modal_support": {
+    "message": "This is a non-profit project and we're working hard for the Ummah. Please share & support — your du'a and shares are a sadaqah jariyah."
+  },
+  "w_modal_title": {
+    "message": "Now works on any long video"
+  },
+  "w_modal_update_btn": {
+    "message": "Update the PC app →"
+  },
+  "w_other_title": {
+    "message": "Explore our other projects"
+  },
+  "w_pill_installed": {
+    "message": "Installed"
+  },
+  "w_pill_updated": {
+    "message": "Updated"
+  },
+  "w_porda_desc": {
+    "message": "Automatically blurs haram content in images and videos. Built for desktop."
+  },
+  "w_prev_li1": {
+    "message": "Fixed: PC freezes during long processing sessions"
+  },
+  "w_prev_li2": {
+    "message": "Fixed: memory issues on long videos"
+  },
+  "w_prev_li3": {
+    "message": "Fixed: lag and unresponsive playback"
+  },
+  "w_prev_li4": {
+    "message": "New: now supports processing very long videos"
+  },
+  "w_prev_li5": {
+    "message": "General performance and stability improvements"
+  },
+  "w_prev_li6": {
+    "message": "New: macOS support"
+  },
+  "w_prev_updates": {
+    "message": "Previous updates"
+  },
+  "w_setup_title": {
+    "message": "Get started in 2 steps"
+  },
+  "w_step1_cta": {
+    "message": "Download for your computer"
+  },
+  "w_step1_desc": {
+    "message": "The desktop app does the music removal. The extension just talks to it from inside YouTube."
+  },
+  "w_step1_title": {
+    "message": "Install the PC helper app"
+  },
+  "w_step2_cta": {
+    "message": "See how to use →"
+  },
+  "w_step2_desc": {
+    "message": "A 2-minute walkthrough showing the toggle on YouTube and how to manage cached audio."
+  },
+  "w_step2_title": {
+    "message": "Learn how to use it"
+  },
+  "w_support_closing": {
+    "message": "Will you support us?"
+  },
+  "w_support_desc": {
+    "message": "Music Remover is built by a small team for the Muslim community. A 5-star review and sharing with friends do more than you might think — they're how we reach more Muslims worldwide and keep improving the app."
+  },
+  "w_support_rate": {
+    "message": "Rate 5 stars on Chrome Web Store"
+  },
+  "w_support_share": {
+    "message": "Share with a friend"
+  },
+  "w_support_title": {
+    "message": "Built by a small team for the Ummah"
+  },
+  "w_update_li1": {
+    "message": "🔇 Mutes YouTube ads automatically, so you don't hear their music."
+  },
+  "w_update_li2": {
+    "message": "Removes music automatically on every video — no clicking."
+  },
+  "w_update_li3": {
+    "message": "Pauses the video until the music is gone, so you never hear it."
+  },
+  "w_update_li4": {
+    "message": "Smoother playback — ads no longer freeze during processing."
+  },
+  "w_update_title": {
+    "message": "What's new in v2.4.0"
+  },
+  "w_wait_body": {
+    "message": "If the PC helper app hasn't updated for you yet, our update can take a few hours to reach everyone. Please hold on and try again in a little while — it's a one-time effort. Thank you for your patience. 🤲"
+  },
+  "w_wait_title": {
+    "message": "Please hold on — this is a one-time wait"
+  }
+}

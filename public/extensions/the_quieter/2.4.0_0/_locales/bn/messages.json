@@ -1,0 +1,582 @@
+{
+   "_comment": {
+      "message": "English (en) — base locale. Keys mirror the data-i18n attributes in popup.html and the chrome.i18n.getMessage calls in popup.js."
+   },
+   "_comment_content": {
+      "message": "Below: strings used by the on-YouTube content script (content.js) — toasts, button tooltips, cache-duration labels."
+   },
+   "_comment_welcome": {
+      "message": "Below: strings for the welcome / update page (welcome.html + welcome.js)."
+   },
+   "auto_remove_label": {
+      "message": "স্বয়ংক্রিয়ভাবে মিউজিক সরান"
+   },
+   "auto_remove_sub": {
+      "message": "প্রতিটি ভিডিওতেই নিজে থেকে মিউজিক সরানো শুরু হবে"
+   },
+   "bg_app_not_running": {
+      "message": "Music Remover ডেস্কটপ অ্যাপ চালু নেই"
+   },
+   "bg_title": {
+      "message": "Music Remover"
+   },
+   "bg_update_available": {
+      "message": "Music Remover — আপডেট v$VER$ এসেছে",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "btn_cancel": {
+      "message": "বাতিল"
+   },
+   "btn_dismiss": {
+      "message": "বন্ধ করুন"
+   },
+   "btn_got_it": {
+      "message": "বুঝেছি"
+   },
+   "btn_hide": {
+      "message": "লুকান"
+   },
+   "btn_keep_running": {
+      "message": "চালু রাখুন"
+   },
+   "btn_ok": {
+      "message": "ঠিক আছে"
+   },
+   "btn_stop_process": {
+      "message": "ওটা থামিয়ে এটিই করুন"
+   },
+   "btn_try_again": {
+      "message": "আবার চেষ্টা করুন"
+   },
+   "cached_badge": {
+      "message": "ক্যাশে সংরক্ষিত"
+   },
+   "cached_label": {
+      "message": "ক্যাশে সংরক্ষিত"
+   },
+   "checking": {
+      "message": "যাচাই করা হচ্ছে..."
+   },
+   "click_below_to_open": {
+      "message": "ইনস্টল করা অ্যাপটি খুলতে নিচে ক্লিক করুন।"
+   },
+   "coming_soon": {
+      "message": "শীঘ্রই আসছে"
+   },
+   "confirm_delete_cached": {
+      "message": "এই ভিডিওর জন্য ক্যাশে সংরক্ষিত মিউজিক-মুক্ত অডিও মুছে ফেলবেন?"
+   },
+   "contact": {
+      "message": "যোগাযোগ"
+   },
+   "couldnt_reach_short": {
+      "message": "অ্যাপটির সাথে সংযোগ করা যায়নি"
+   },
+   "desktop_app_intro": {
+      "message": "এই এক্সটেনশনটি আপনার কম্পিউটারে থাকা ফ্রি Music Remover অ্যাপের সাথে যোগাযোগ করে। অ্যাপটি ছাড়া YouTube-এর টগলটি কিছুই করতে পারবে না।"
+   },
+   "desktop_app_not_running": {
+      "message": "ডেস্কটপ অ্যাপ চালু নেই"
+   },
+   "downloading_setup_files": {
+      "message": "প্রয়োজনীয় ফাইল ডাউনলোড হচ্ছে (একবারই)।"
+   },
+   "duration_day": {
+      "message": "$COUNT$ দিন",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_days": {
+      "message": "$COUNT$ দিন",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hour": {
+      "message": "$COUNT$ ঘণ্টা",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hours": {
+      "message": "$COUNT$ ঘণ্টা",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_min": {
+      "message": "$COUNT$ মিনিট",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_mins": {
+      "message": "$COUNT$ মিনিট",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "expired": {
+      "message": "মেয়াদোত্তীর্ণ"
+   },
+   "expires_in": {
+      "message": "মেয়াদ শেষ হবে"
+   },
+   "fallback_couldnt_reach": {
+      "message": "অ্যাপটির সাথে সংযোগ করা যায়নি। নিচে থেকে ইনস্টল বা পুনরায় ইনস্টল করুন।"
+   },
+   "finishing_setup": {
+      "message": "প্রথমবারের সেটআপ শেষ হচ্ছে"
+   },
+   "free_download": {
+      "message": "ফ্রি ডাউনলোড"
+   },
+   "get_desktop_app": {
+      "message": "ফ্রি ডেস্কটপ অ্যাপটি নিন"
+   },
+   "how_it_works": {
+      "message": "যেভাবে কাজ করে"
+   },
+   "how_to_use": {
+      "message": "যেভাবে ব্যবহার করবেন"
+   },
+   "install_or_open": {
+      "message": "এই এক্সটেনশনটি ব্যবহার করতে Music Remover ইনস্টল করুন বা খুলুন।"
+   },
+   "install_or_reinstall": {
+      "message": "নিচে থেকে ইনস্টল বা পুনরায় ইনস্টল করুন।"
+   },
+   "music_removed_ready": {
+      "message": "মিউজিক-মুক্ত অডিও প্রস্তুত"
+   },
+   "music_remover_is_running": {
+      "message": "Music Remover চালু আছে"
+   },
+   "music_remover_isnt_running": {
+      "message": "Music Remover চালু নেই"
+   },
+   "muslimbrowser_desc": {
+      "message": "মুসলিমদের জন্য নিরাপদ ব্রাউজার"
+   },
+   "mute_ads_label": {
+      "message": "বিজ্ঞাপন মিউট করুন"
+   },
+   "mute_ads_sub": {
+      "message": "ইউটিউব বিজ্ঞাপন চলার সময় এর শব্দ বন্ধ রাখা হবে"
+   },
+   "not_processed_yet": {
+      "message": "এখনও প্রসেস হয়নি"
+   },
+   "open_app": {
+      "message": "অ্যাপ খুলুন"
+   },
+   "open_music_remover": {
+      "message": "Music Remover খুলুন"
+   },
+   "open_youtube_to_use": {
+      "message": "ব্যবহার করতে যেকোনো YouTube ভিডিও খুলুন।"
+   },
+   "opening": {
+      "message": "খোলা হচ্ছে..."
+   },
+   "pause_until_label": {
+      "message": "মিউজিক না সরানো পর্যন্ত থামিয়ে রাখুন"
+   },
+   "pause_until_sub": {
+      "message": "পরিষ্কার অডিও তৈরি না হওয়া পর্যন্ত ভিডিও থামিয়ে রাখা হবে"
+   },
+   "perm_full_guide": {
+      "message": "সম্পূর্ণ সেটআপ গাইড →"
+   },
+   "perm_see_fix": {
+      "message": "স্ক্রিনশটসহ সমাধান দেখুন →"
+   },
+   "perm_step1": {
+      "message": "\u003Cstrong>১.\u003C/strong> দয়া করে নিশ্চিত করুন যে \u003Cstrong>Music Remover PC হেল্পার অ্যাপটি চালু আছে\u003C/strong>। এখনও নেই? এটি ডাউনলোড করতে আপনার ব্রাউজার টুলবারের \u003Cstrong>Music Remover আইকনে\u003C/strong> ক্লিক করুন।"
+   },
+   "perm_step2": {
+      "message": "\u003Cstrong>২.\u003C/strong> অ্যাপটি ইতিমধ্যে চালু থাকলে, Chrome হয়তো এটি ব্লক করছে। \u003Cstrong>URL বারের বাঁ পাশের\u003C/strong> আইকনে ক্লিক করুন এবং এই সাইটের জন্য \u003Cstrong>\"App on device\"\u003C/strong> অনুমতি দিন, তারপর আবার টগলে ক্লিক করুন।"
+   },
+   "perm_title": {
+      "message": "Music Remover অ্যাপ সংযুক্ত নয়"
+   },
+   "pordaai_desc": {
+      "message": "ছবি ও ভিডিওতে হারাম অংশ ঝাপসা করুন"
+   },
+   "processing_this_video": {
+      "message": "এই ভিডিওটি প্রসেস হচ্ছে"
+   },
+   "processing_video": {
+      "message": "ভিডিও প্রসেস হচ্ছে"
+   },
+   "products_title": {
+      "message": "আমাদের আরও প্রোডাক্ট"
+   },
+   "report_bug": {
+      "message": "সমস্যা জানান"
+   },
+   "settings": {
+      "message": "সেটিংস"
+   },
+   "stage_done": {
+      "message": "সম্পন্ন"
+   },
+   "stage_downloading": {
+      "message": "অডিও লোড হচ্ছে... (সময় ভিডিওর দৈর্ঘ্যের উপর নির্ভর করে)"
+   },
+   "stage_encoding": {
+      "message": "চূড়ান্ত করা হচ্ছে... প্রায় শেষ"
+   },
+   "stage_extracting": {
+      "message": "মিউজিক সরানো হচ্ছে... একটু অপেক্ষা করুন"
+   },
+   "stage_processing": {
+      "message": "প্রসেস হচ্ছে"
+   },
+   "stage_resuming": {
+      "message": "আবার শুরু হচ্ছে..."
+   },
+   "stage_starting": {
+      "message": "শুরু হচ্ছে..."
+   },
+   "stage_working": {
+      "message": "কাজ চলছে"
+   },
+   "storage_label": {
+      "message": "স্টোরেজ"
+   },
+   "title_audio_ready": {
+      "message": "মিউজিক-মুক্ত অডিও প্রস্তুত"
+   },
+   "title_cache_duration": {
+      "message": "এই ভিডিওর জন্য ক্যাশের মেয়াদ"
+   },
+   "title_cached_change": {
+      "message": "$LABEL$ পর্যন্ত ক্যাশে রাখা হয়েছে — পরিবর্তন করতে আপডেট বা মুছে ফেলুন",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "title_click_restore": {
+      "message": "মূল অডিও ফিরিয়ে আনতে ক্লিক করুন"
+   },
+   "title_finishing_setup": {
+      "message": "Music Remover প্রথমবারের সেটআপ শেষ করছে..."
+   },
+   "title_removal_progress": {
+      "message": "মিউজিক সরানোর কাজ চলছে..."
+   },
+   "title_remove_music": {
+      "message": "মিউজিক সরান (Music Remover অ্যাপ)"
+   },
+   "title_show_progress": {
+      "message": "Music Remover-এর অগ্রগতি দেখুন"
+   },
+   "title_will_cache": {
+      "message": "প্রসেস হলে $LABEL$ পর্যন্ত ক্যাশে রাখা হবে",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_set": {
+      "message": "ক্যাশের মেয়াদ $LABEL$ নির্ধারণ করা হয়েছে।",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_update_failed": {
+      "message": "ক্যাশের মেয়াদ আপডেট করতে ব্যর্থ।"
+   },
+   "toast_cached_deleted": {
+      "message": "ক্যাশে সংরক্ষিত অডিও মুছে ফেলা হয়েছে।"
+   },
+   "toast_conflict": {
+      "message": "⚠ আরেকটি ভিডিও ইতিমধ্যে প্রসেস হচ্ছে।"
+   },
+   "toast_delete_failed": {
+      "message": "ক্যাশে সংরক্ষিত অডিও মুছতে ব্যর্থ।"
+   },
+   "toast_error": {
+      "message": "ত্রুটি: $MSG$",
+      "placeholders": {
+         "msg": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_failed_load": {
+      "message": "প্রসেস করা অডিও লোড করতে ব্যর্থ।"
+   },
+   "toast_first_run": {
+      "message": "Music Remover প্রথমবারের সেটআপ শেষ করছে ($PCT$%)। একটু পরে আবার চেষ্টা করুন।",
+      "placeholders": {
+         "pct": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_no_video": {
+      "message": "ভিডিও এলিমেন্ট খুঁজে পাওয়া যায়নি।"
+   },
+   "toast_original_restored": {
+      "message": "মূল অডিও ফিরিয়ে আনা হয়েছে।"
+   },
+   "toast_processing_failed": {
+      "message": "প্রসেসিং ব্যর্থ হয়েছে — এটি সাধারণত একটি সাময়িক নেটওয়ার্ক সমস্যা।"
+   },
+   "toast_removing_music": {
+      "message": "মিউজিক সরানো হচ্ছে..."
+   },
+   "toast_time_depends": {
+      "message": "সময় ভিডিওর দৈর্ঘ্যের উপর নির্ভর করে — একবার হয়ে গেলে পরেরবার সঙ্গে সঙ্গেই চলবে।"
+   },
+   "toast_unexpected": {
+      "message": "অ্যাপ থেকে অপ্রত্যাশিত উত্তর এসেছে।"
+   },
+   "toast_will_cache": {
+      "message": "প্রসেস হয়ে গেলে $LABEL$ পর্যন্ত ক্যাশে রাখা হবে।",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "ttl_15d": {
+      "message": "১৫ দিন"
+   },
+   "ttl_1d": {
+      "message": "১ দিন"
+   },
+   "ttl_1y": {
+      "message": "১ বছর"
+   },
+   "ttl_30d": {
+      "message": "৩০ দিন"
+   },
+   "ttl_3d": {
+      "message": "৩ দিন"
+   },
+   "ttl_6m": {
+      "message": "৬ মাস"
+   },
+   "ttl_7d": {
+      "message": "৭ দিন"
+   },
+   "ttl_delete": {
+      "message": "মুছুন"
+   },
+   "ttl_never": {
+      "message": "কখনো নয়"
+   },
+   "ttl_prompt": {
+      "message": "ক্যাশে..."
+   },
+   "update": {
+      "message": "আপডেট করুন"
+   },
+   "update_available": {
+      "message": "আপডেট এসেছে"
+   },
+   "update_req_body": {
+      "message": "Music Remover ডেস্কটপ অ্যাপের একটি নতুন সংস্করণ এসেছে এবং চালিয়ে যেতে এটি প্রয়োজন। দয়া করে প্রথমে আপডেটটি ইনস্টল করুন।"
+   },
+   "update_req_link": {
+      "message": "আপডেট করতে Music Remover খুলুন →"
+   },
+   "update_req_title": {
+      "message": "Music Remover আপডেট প্রয়োজন"
+   },
+   "use_toggle_to_play": {
+      "message": "চালাতে YouTube প্লেয়ারের টগলটি ব্যবহার করুন।"
+   },
+   "use_toggle_to_start": {
+      "message": "শুরু করতে YouTube প্লেয়ারের টগলটি ব্যবহার করুন।"
+   },
+   "w_donate_bd": {
+      "message": "বাংলাদেশ: bKash (Send Money) 01823170383"
+   },
+   "w_donate_cta": {
+      "message": "IqraWave-এর মাধ্যমে অনুদান দিন"
+   },
+   "w_donate_desc": {
+      "message": "আমরা একটি অলাভজনক প্রকল্প। উম্মাহর জন্য এই AI টুলটি উন্নত করে যেতে আমাদের সাহায্য করতে, দয়া করে IqraWave-এর মাধ্যমে একটি ছোট অনুদানের কথা বিবেচনা করুন।"
+   },
+   "w_donate_title": {
+      "message": "এই প্রকল্পটিকে সমর্থন করুন"
+   },
+   "w_feedback_cta": {
+      "message": "ফর্মটি খুলুন →"
+   },
+   "w_feedback_desc": {
+      "message": "সরাসরি আমাদের কাছ থেকে আপডেট পেতে সাবস্ক্রাইব করুন। মাত্র একটি ছোট ফর্ম — ৩০ সেকেন্ড।"
+   },
+   "w_feedback_title": {
+      "message": "আপনার মতামত জানতে চাই"
+   },
+   "w_hero_cta": {
+      "message": "২ ধাপে শুরু করুন"
+   },
+   "w_hero_sub_install": {
+      "message": "যেকোনো YouTube ভিডিও থেকে ব্যাকগ্রাউন্ড মিউজিক মিউট ও সরান — দ্রুত, ফ্রি, গোপনীয়।"
+   },
+   "w_hero_sub_update": {
+      "message": "আপনি এখন v$VER$ ব্যবহার করছেন। এটি হালনাগাদ রাখার জন্য ধন্যবাদ।",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "w_hero_title_install": {
+      "message": "Music Remover ইনস্টল করার জন্য ধন্যবাদ"
+   },
+   "w_hero_title_update": {
+      "message": "হারাম মিউজিক রিমুভার। অতি দ্রুত, ফ্রি ও আনলিমিটেড"
+   },
+   "w_howto_cta": {
+      "message": "২-মিনিটের সেটআপ গাইডটি দেখুন →"
+   },
+   "w_link_copied": {
+      "message": "লিংক কপি হয়েছে!"
+   },
+   "w_mbrowser_desc": {
+      "message": "মুসলিমদের জন্য তৈরি একটি ব্রাউজার, যাতে অনেক ইসলামিক ফিচার রয়েছে।"
+   },
+   "w_modal_badge": {
+      "message": "✨ বিশাল আপডেট"
+   },
+   "w_modal_callout": {
+      "message": "এটি পেতে, আপনাকে অবশ্যই PC হেল্পার অ্যাপটি সর্বশেষ সংস্করণে আপডেট করতে হবে।"
+   },
+   "w_modal_hl": {
+      "message": "প্রথম পরিষ্কার অডিও পাবেন প্রায় 20 সেকেন্ডেই — দীর্ঘ ভিডিওতেও। অতি দ্রুত, আর আপনি দেখতে দেখতেই এটি স্ট্রিম হতে থাকে।"
+   },
+   "w_modal_later": {
+      "message": "হয়তো পরে"
+   },
+   "w_modal_share_btn": {
+      "message": "একজন বন্ধুর সাথে শেয়ার করুন"
+   },
+   "w_modal_support": {
+      "message": "এটি একটি অলাভজনক প্রকল্প এবং আমরা উম্মাহর জন্য কঠোর পরিশ্রম করছি। দয়া করে শেয়ার ও সমর্থন করুন — আপনার দোয়া ও শেয়ার একটি সদকায়ে জারিয়া।"
+   },
+   "w_modal_title": {
+      "message": "এখন যেকোনো দীর্ঘ ভিডিওতে কাজ করে"
+   },
+   "w_modal_update_btn": {
+      "message": "PC অ্যাপটি আপডেট করুন →"
+   },
+   "w_other_title": {
+      "message": "আমাদের অন্যান্য প্রকল্প দেখুন"
+   },
+   "w_pill_installed": {
+      "message": "ইনস্টল হয়েছে"
+   },
+   "w_pill_updated": {
+      "message": "আপডেট হয়েছে"
+   },
+   "w_porda_desc": {
+      "message": "ছবি ও ভিডিওতে হারাম কন্টেন্ট স্বয়ংক্রিয়ভাবে ঝাপসা করে। ডেস্কটপের জন্য তৈরি।"
+   },
+   "w_prev_li1": {
+      "message": "সমাধান: দীর্ঘ প্রসেসিং চলাকালে PC আটকে যাওয়া"
+   },
+   "w_prev_li2": {
+      "message": "সমাধান: দীর্ঘ ভিডিওতে মেমরির সমস্যা"
+   },
+   "w_prev_li3": {
+      "message": "সমাধান: ল্যাগ ও প্লেব্যাকে সাড়া না দেওয়া"
+   },
+   "w_prev_li4": {
+      "message": "নতুন: এখন খুব দীর্ঘ ভিডিও প্রসেস করা যায়"
+   },
+   "w_prev_li5": {
+      "message": "সাধারণ পারফরম্যান্স ও স্থিতিশীলতার উন্নতি"
+   },
+   "w_prev_li6": {
+      "message": "নতুন: macOS সাপোর্ট"
+   },
+   "w_prev_updates": {
+      "message": "পূর্ববর্তী আপডেট"
+   },
+   "w_setup_title": {
+      "message": "২ ধাপে শুরু করুন"
+   },
+   "w_step1_cta": {
+      "message": "আপনার কম্পিউটারের জন্য ডাউনলোড করুন"
+   },
+   "w_step1_desc": {
+      "message": "আসল মিউজিক সরানোর কাজটি ডেস্কটপ অ্যাপই করে। এক্সটেনশনটি শুধু YouTube-এর ভেতর থেকে এর সাথে যোগাযোগ করে।"
+   },
+   "w_step1_title": {
+      "message": "PC হেল্পার অ্যাপটি ইনস্টল করুন"
+   },
+   "w_step2_cta": {
+      "message": "যেভাবে ব্যবহার করবেন দেখুন →"
+   },
+   "w_step2_desc": {
+      "message": "২ মিনিটের একটি সংক্ষিপ্ত গাইড — YouTube-এর টগল এবং ক্যাশে রাখা অডিও কীভাবে সামলাবেন, তা দেখানো হয়েছে।"
+   },
+   "w_step2_title": {
+      "message": "কীভাবে ব্যবহার করবেন শিখুন"
+   },
+   "w_support_closing": {
+      "message": "আপনি কি আমাদের সমর্থন করবেন?"
+   },
+   "w_support_desc": {
+      "message": "Music Remover মুসলিম সম্প্রদায়ের জন্য একটি ছোট দল তৈরি করেছে। একটি ৫-তারকা রিভিউ ও বন্ধুদের সাথে শেয়ার করা আপনার ধারণার চেয়ে অনেক বেশি কাজে দেয় — এভাবেই আমরা বিশ্বজুড়ে আরও বেশি মুসলিমের কাছে পৌঁছাই এবং অ্যাপটি উন্নত করতে থাকি।"
+   },
+   "w_support_rate": {
+      "message": "Chrome Web Store-এ ৫ তারকা রেটিং দিন"
+   },
+   "w_support_share": {
+      "message": "একজন বন্ধুর সাথে শেয়ার করুন"
+   },
+   "w_support_title": {
+      "message": "উম্মাহর জন্য একটি ছোট দল দ্বারা তৈরি"
+   },
+   "w_update_li1": {
+      "message": "🔇 ইউটিউব বিজ্ঞাপন স্বয়ংক্রিয়ভাবে মিউট করে, যাতে আপনি এর গান শুনতে না পান।"
+   },
+   "w_update_li2": {
+      "message": "প্রতিটি ভিডিওতে স্বয়ংক্রিয়ভাবে মিউজিক সরিয়ে দেয় — কোনো ক্লিক ছাড়াই।"
+   },
+   "w_update_li3": {
+      "message": "মিউজিক সরে না যাওয়া পর্যন্ত ভিডিও থামিয়ে রাখে, যাতে আপনি তা কখনো শুনতে না পান।"
+   },
+   "w_update_li4": {
+      "message": "আরও মসৃণ প্লেব্যাক — প্রসেসিং চলাকালীন বিজ্ঞাপন আর আটকে যায় না।"
+   },
+   "w_update_title": {
+      "message": "v2.4.0-এ যা নতুন"
+   },
+   "w_wait_body": {
+      "message": "আপনার কম্পিউটারের সহযোগী অ্যাপটি এখনও আপডেট না হয়ে থাকলে, আমাদের আপডেট সবার কাছে পৌঁছাতে কয়েক ঘণ্টা লাগতে পারে। অনুগ্রহ করে একটু অপেক্ষা করুন এবং কিছুক্ষণ পর আবার চেষ্টা করুন — এটি একবারের পরিশ্রম মাত্র। আপনার ধৈর্যের জন্য ধন্যবাদ। 🤲"
+   },
+   "w_wait_title": {
+      "message": "অনুগ্রহ করে একটু অপেক্ষা করুন — এটি একবারের অপেক্ষা"
+   }
+}

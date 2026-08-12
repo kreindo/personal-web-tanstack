@@ -1,0 +1,582 @@
+{
+   "_comment": {
+      "message": "English (en) — base locale. Keys mirror the data-i18n attributes in popup.html and the chrome.i18n.getMessage calls in popup.js."
+   },
+   "_comment_content": {
+      "message": "Below: strings used by the on-YouTube content script (content.js) — toasts, button tooltips, cache-duration labels."
+   },
+   "_comment_welcome": {
+      "message": "Below: strings for the welcome / update page (welcome.html + welcome.js)."
+   },
+   "auto_remove_label": {
+      "message": "موسیقی خودکار طور پر ہٹائیں"
+   },
+   "auto_remove_sub": {
+      "message": "ہر ویڈیو سے موسیقی خود بخود ہٹنا شروع ہو جائے گی"
+   },
+   "bg_app_not_running": {
+      "message": "Music Remover ڈیسک ٹاپ ایپ چل نہیں رہی"
+   },
+   "bg_title": {
+      "message": "Music Remover"
+   },
+   "bg_update_available": {
+      "message": "Music Remover — اپ ڈیٹ v$VER$ دستیاب ہے",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "btn_cancel": {
+      "message": "منسوخ کریں"
+   },
+   "btn_dismiss": {
+      "message": "بند کریں"
+   },
+   "btn_got_it": {
+      "message": "سمجھ گیا"
+   },
+   "btn_hide": {
+      "message": "چھپائیں"
+   },
+   "btn_keep_running": {
+      "message": "چلتا رہنے دیں"
+   },
+   "btn_ok": {
+      "message": "ٹھیک ہے"
+   },
+   "btn_stop_process": {
+      "message": "روک کر اسے پروسیس کریں"
+   },
+   "btn_try_again": {
+      "message": "دوبارہ کوشش کریں"
+   },
+   "cached_badge": {
+      "message": "کیش شدہ"
+   },
+   "cached_label": {
+      "message": "کیش شدہ"
+   },
+   "checking": {
+      "message": "جانچ رہا ہے..."
+   },
+   "click_below_to_open": {
+      "message": "انسٹال شدہ ایپ کھولنے کے لیے نیچے کلک کریں۔"
+   },
+   "coming_soon": {
+      "message": "جلد آ رہا ہے"
+   },
+   "confirm_delete_cached": {
+      "message": "کیا اس ویڈیو کی محفوظ شدہ موسیقی سے پاک آڈیو حذف کر دیں؟"
+   },
+   "contact": {
+      "message": "رابطہ"
+   },
+   "couldnt_reach_short": {
+      "message": "ایپ تک رسائی نہیں ہو سکی"
+   },
+   "desktop_app_intro": {
+      "message": "یہ ایکسٹینشن آپ کے کمپیوٹر پر موجود مفت Music Remover ایپ سے رابطہ کرتی ہے۔ اس کے بغیر YouTube پر ٹوگل کچھ نہیں کر سکتا۔"
+   },
+   "desktop_app_not_running": {
+      "message": "ڈیسک ٹاپ ایپ چل نہیں رہی"
+   },
+   "downloading_setup_files": {
+      "message": "ضروری فائلیں ڈاؤن لوڈ ہو رہی ہیں (ایک بار کے لیے)۔"
+   },
+   "duration_day": {
+      "message": "$COUNT$ دن",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_days": {
+      "message": "$COUNT$ دن",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hour": {
+      "message": "$COUNT$ گھنٹہ",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_hours": {
+      "message": "$COUNT$ گھنٹے",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_min": {
+      "message": "$COUNT$ منٹ",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "duration_mins": {
+      "message": "$COUNT$ منٹ",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "expired": {
+      "message": "میعاد ختم"
+   },
+   "expires_in": {
+      "message": "میعاد ختم ہونے میں"
+   },
+   "fallback_couldnt_reach": {
+      "message": "ایپ تک رسائی نہیں ہو سکی۔ نیچے سے انسٹال یا دوبارہ انسٹال کریں۔"
+   },
+   "finishing_setup": {
+      "message": "پہلی بار کا سیٹ اپ مکمل ہو رہا ہے"
+   },
+   "free_download": {
+      "message": "مفت ڈاؤن لوڈ"
+   },
+   "get_desktop_app": {
+      "message": "مفت ڈیسک ٹاپ ایپ حاصل کریں"
+   },
+   "how_it_works": {
+      "message": "یہ کیسے کام کرتا ہے"
+   },
+   "how_to_use": {
+      "message": "استعمال کا طریقہ"
+   },
+   "install_or_open": {
+      "message": "اس ایکسٹینشن کو استعمال کرنے کے لیے Music Remover انسٹال یا کھولیں۔"
+   },
+   "install_or_reinstall": {
+      "message": "نیچے سے انسٹال یا دوبارہ انسٹال کریں۔"
+   },
+   "music_removed_ready": {
+      "message": "موسیقی سے پاک آڈیو تیار ہے"
+   },
+   "music_remover_is_running": {
+      "message": "Music Remover چل رہا ہے"
+   },
+   "music_remover_isnt_running": {
+      "message": "Music Remover چل نہیں رہا"
+   },
+   "muslimbrowser_desc": {
+      "message": "مسلمانوں کے لیے محفوظ براؤزر"
+   },
+   "mute_ads_label": {
+      "message": "اشتہارات خاموش کریں"
+   },
+   "mute_ads_sub": {
+      "message": "چلنے کے دوران یوٹیوب اشتہارات کی آواز خاموش کریں"
+   },
+   "not_processed_yet": {
+      "message": "ابھی تک پروسیس نہیں ہوئی"
+   },
+   "open_app": {
+      "message": "ایپ کھولیں"
+   },
+   "open_music_remover": {
+      "message": "Music Remover کھولیں"
+   },
+   "open_youtube_to_use": {
+      "message": "استعمال کے لیے کوئی بھی YouTube ویڈیو کھولیں۔"
+   },
+   "opening": {
+      "message": "کھل رہا ہے..."
+   },
+   "pause_until_label": {
+      "message": "موسیقی ہٹنے تک روکیں"
+   },
+   "pause_until_sub": {
+      "message": "صاف آڈیو تیار ہونے تک پلے بیک روکے رکھیں"
+   },
+   "perm_full_guide": {
+      "message": "مکمل سیٹ اپ گائیڈ →"
+   },
+   "perm_see_fix": {
+      "message": "اسکرین شاٹ کے ساتھ حل دیکھیں →"
+   },
+   "perm_step1": {
+      "message": "\u003Cstrong>1.\u003C/strong> براہ کرم یقینی بنائیں کہ \u003Cstrong>Music Remover PC مددگار ایپ چل رہی ہے\u003C/strong>۔ ابھی تک آپ کے پاس نہیں ہے؟ اسے ڈاؤن لوڈ کرنے کے لیے اپنے براؤزر ٹول بار میں \u003Cstrong>Music Remover آئیکن\u003C/strong> پر کلک کریں۔"
+   },
+   "perm_step2": {
+      "message": "\u003Cstrong>2.\u003C/strong> اگر ایپ پہلے ہی چل رہی ہے، تو ممکن ہے Chrome اسے روک رہا ہو۔ \u003Cstrong>URL بار کے بائیں\u003C/strong> جانب موجود آئیکن پر کلک کریں اور اس سائٹ کے لیے \u003Cstrong>\"App on device\"\u003C/strong> اجازت دیں، پھر ٹوگل دوبارہ کلک کریں۔"
+   },
+   "perm_title": {
+      "message": "Music Remover ایپ منسلک نہیں ہے"
+   },
+   "pordaai_desc": {
+      "message": "تصاویر اور ویڈیوز میں حرام کو دھندلا کریں"
+   },
+   "processing_this_video": {
+      "message": "یہ ویڈیو پروسیس ہو رہی ہے"
+   },
+   "processing_video": {
+      "message": "ویڈیو پروسیس ہو رہی ہے"
+   },
+   "products_title": {
+      "message": "ہماری دیگر پیشکشیں"
+   },
+   "report_bug": {
+      "message": "خرابی کی اطلاع دیں"
+   },
+   "settings": {
+      "message": "ترتیبات"
+   },
+   "stage_done": {
+      "message": "مکمل"
+   },
+   "stage_downloading": {
+      "message": "آڈیو لوڈ ہو رہی ہے... (وقت ویڈیو کی لمبائی پر منحصر ہے)"
+   },
+   "stage_encoding": {
+      "message": "حتمی مراحل... تقریباً مکمل"
+   },
+   "stage_extracting": {
+      "message": "موسیقی ہٹائی جا رہی ہے... براہ کرم انتظار کریں"
+   },
+   "stage_processing": {
+      "message": "پروسیسنگ"
+   },
+   "stage_resuming": {
+      "message": "دوبارہ شروع ہو رہا ہے..."
+   },
+   "stage_starting": {
+      "message": "شروع ہو رہا ہے..."
+   },
+   "stage_working": {
+      "message": "کام جاری ہے"
+   },
+   "storage_label": {
+      "message": "اسٹوریج"
+   },
+   "title_audio_ready": {
+      "message": "موسیقی سے پاک آڈیو تیار ہے"
+   },
+   "title_cache_duration": {
+      "message": "اس ویڈیو کے لیے کیش کی مدت"
+   },
+   "title_cached_change": {
+      "message": "$LABEL$ کے لیے کیش شدہ — اپ ڈیٹ یا حذف کرنے کے لیے تبدیل کریں",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "title_click_restore": {
+      "message": "اصل آڈیو بحال کرنے کے لیے کلک کریں"
+   },
+   "title_finishing_setup": {
+      "message": "Music Remover پہلی بار کا سیٹ اپ مکمل کر رہا ہے..."
+   },
+   "title_removal_progress": {
+      "message": "موسیقی ہٹانے کا عمل جاری ہے..."
+   },
+   "title_remove_music": {
+      "message": "موسیقی ہٹائیں (Music Remover ایپ)"
+   },
+   "title_show_progress": {
+      "message": "Music Remover کی پیش رفت دکھائیں"
+   },
+   "title_will_cache": {
+      "message": "پروسیس ہونے پر $LABEL$ کے لیے کیش کیا جائے گا",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_set": {
+      "message": "کیش کی مدت $LABEL$ مقرر کر دی گئی۔",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_cache_update_failed": {
+      "message": "کیش کی مدت اپ ڈیٹ نہیں ہو سکی۔"
+   },
+   "toast_cached_deleted": {
+      "message": "کیش شدہ آڈیو حذف کر دی گئی۔"
+   },
+   "toast_conflict": {
+      "message": "⚠ ایک اور ویڈیو پہلے ہی پروسیس ہو رہی ہے۔"
+   },
+   "toast_delete_failed": {
+      "message": "کیش شدہ آڈیو حذف نہیں ہو سکی۔"
+   },
+   "toast_error": {
+      "message": "خرابی: $MSG$",
+      "placeholders": {
+         "msg": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_failed_load": {
+      "message": "پروسیس شدہ آڈیو لوڈ نہیں ہو سکی۔"
+   },
+   "toast_first_run": {
+      "message": "Music Remover پہلی بار کا سیٹ اپ مکمل کر رہا ہے ($PCT$%)۔ ایک لمحے بعد دوبارہ کوشش کریں۔",
+      "placeholders": {
+         "pct": {
+            "content": "$1"
+         }
+      }
+   },
+   "toast_no_video": {
+      "message": "ویڈیو نہیں مل سکی۔"
+   },
+   "toast_original_restored": {
+      "message": "اصل آڈیو بحال کر دی گئی۔"
+   },
+   "toast_processing_failed": {
+      "message": "پروسیسنگ ناکام — یہ عام طور پر عارضی نیٹ ورک مسئلہ ہوتا ہے۔"
+   },
+   "toast_removing_music": {
+      "message": "موسیقی ہٹائی جا رہی ہے..."
+   },
+   "toast_time_depends": {
+      "message": "وقت ویڈیو کی لمبائی پر منحصر ہے — دوبارہ چلانا فوری ہوتا ہے۔"
+   },
+   "toast_unexpected": {
+      "message": "ایپ کی طرف سے غیر متوقع جواب ملا۔"
+   },
+   "toast_will_cache": {
+      "message": "پروسیس ہونے کے بعد $LABEL$ کے لیے کیش کیا جائے گا۔",
+      "placeholders": {
+         "label": {
+            "content": "$1"
+         }
+      }
+   },
+   "ttl_15d": {
+      "message": "15 دن"
+   },
+   "ttl_1d": {
+      "message": "1 دن"
+   },
+   "ttl_1y": {
+      "message": "1 سال"
+   },
+   "ttl_30d": {
+      "message": "30 دن"
+   },
+   "ttl_3d": {
+      "message": "3 دن"
+   },
+   "ttl_6m": {
+      "message": "6 مہینے"
+   },
+   "ttl_7d": {
+      "message": "7 دن"
+   },
+   "ttl_delete": {
+      "message": "حذف کریں"
+   },
+   "ttl_never": {
+      "message": "کبھی نہیں"
+   },
+   "ttl_prompt": {
+      "message": "کیش..."
+   },
+   "update": {
+      "message": "اپ ڈیٹ کریں"
+   },
+   "update_available": {
+      "message": "اپ ڈیٹ دستیاب ہے"
+   },
+   "update_req_body": {
+      "message": "Music Remover ڈیسک ٹاپ ایپ کا ایک نیا ورژن دستیاب ہے اور جاری رکھنے کے لیے ضروری ہے۔ براہ کرم پہلے اپ ڈیٹ انسٹال کریں۔"
+   },
+   "update_req_link": {
+      "message": "اپ ڈیٹ کرنے کے لیے Music Remover کھولیں →"
+   },
+   "update_req_title": {
+      "message": "Music Remover اپ ڈیٹ ضروری ہے"
+   },
+   "use_toggle_to_play": {
+      "message": "چلانے کے لیے YouTube پلیئر پر موجود ٹوگل استعمال کریں۔"
+   },
+   "use_toggle_to_start": {
+      "message": "شروع کرنے کے لیے YouTube پلیئر پر موجود ٹوگل استعمال کریں۔"
+   },
+   "w_donate_bd": {
+      "message": "بنگلہ دیش: bKash (Send Money) 01823170383"
+   },
+   "w_donate_cta": {
+      "message": "IqraWave کے ذریعے عطیہ کریں"
+   },
+   "w_donate_desc": {
+      "message": "ہم ایک غیر منافع بخش منصوبہ ہیں۔ امت کے لیے اس AI ٹول کو بہتر بناتے رہنے میں ہماری مدد کے لیے، براہ کرم IqraWave کے ذریعے ایک چھوٹے عطیہ پر غور کریں۔"
+   },
+   "w_donate_title": {
+      "message": "اس منصوبے کی مدد کریں"
+   },
+   "w_feedback_cta": {
+      "message": "فارم کھولیں →"
+   },
+   "w_feedback_desc": {
+      "message": "براہ راست ہم سے اپ ڈیٹس حاصل کرنے کے لیے سبسکرائب کریں۔ صرف ایک مختصر فارم — 30 سیکنڈ۔"
+   },
+   "w_feedback_title": {
+      "message": "ہمیں آپ کی رائے کا انتظار رہے گا"
+   },
+   "w_hero_cta": {
+      "message": "2 مراحل میں شروع کریں"
+   },
+   "w_hero_sub_install": {
+      "message": "کسی بھی YouTube ویڈیو سے پس منظر کی موسیقی خاموش کریں اور ہٹائیں — تیز، مفت اور نجی۔"
+   },
+   "w_hero_sub_update": {
+      "message": "اب آپ v$VER$ پر ہیں۔ اسے اپ ڈیٹ رکھنے کا شکریہ۔",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "w_hero_title_install": {
+      "message": "Music Remover انسٹال کرنے کا شکریہ"
+   },
+   "w_hero_title_update": {
+      "message": "حرام موسیقی ہٹانے والا۔ انتہائی تیز، مفت اور لامحدود"
+   },
+   "w_howto_cta": {
+      "message": "2 منٹ کی سیٹ اپ گائیڈ دیکھیں →"
+   },
+   "w_link_copied": {
+      "message": "لنک کاپی ہو گیا!"
+   },
+   "w_mbrowser_desc": {
+      "message": "مسلمانوں کے لیے بنایا گیا براؤزر، جس میں بہت سی اسلامی خصوصیات شامل ہیں۔"
+   },
+   "w_modal_badge": {
+      "message": "✨ بڑی اپ ڈیٹ"
+   },
+   "w_modal_callout": {
+      "message": "یہ حاصل کرنے کے لیے، آپ کو PC مددگار ایپ کو تازہ ترین ورژن پر اپ ڈیٹ کرنا ہوگا۔"
+   },
+   "w_modal_hl": {
+      "message": "پہلی صاف شدہ آڈیو تقریباً 20 سیکنڈ میں — طویل ویڈیوز پر بھی۔ انتہائی تیز، اور دیکھتے ہوئے ہی اسٹریم ہوتی رہتی ہے۔"
+   },
+   "w_modal_later": {
+      "message": "شاید بعد میں"
+   },
+   "w_modal_share_btn": {
+      "message": "کسی دوست کے ساتھ شیئر کریں"
+   },
+   "w_modal_support": {
+      "message": "یہ ایک غیر منافع بخش منصوبہ ہے اور ہم امت کے لیے سخت محنت کر رہے ہیں۔ براہ کرم شیئر کریں اور ساتھ دیں — آپ کی دعا اور اشتراک ایک صدقہ جاریہ ہیں۔"
+   },
+   "w_modal_title": {
+      "message": "اب کسی بھی طویل ویڈیو پر کام کرتا ہے"
+   },
+   "w_modal_update_btn": {
+      "message": "PC ایپ اپ ڈیٹ کریں →"
+   },
+   "w_other_title": {
+      "message": "ہمارے دیگر منصوبے دیکھیں"
+   },
+   "w_pill_installed": {
+      "message": "انسٹال ہو گیا"
+   },
+   "w_pill_updated": {
+      "message": "اپ ڈیٹ ہو گیا"
+   },
+   "w_porda_desc": {
+      "message": "تصاویر اور ویڈیوز میں حرام مواد کو خودکار طور پر دھندلا کرتا ہے۔ ڈیسک ٹاپ کے لیے بنایا گیا۔"
+   },
+   "w_prev_li1": {
+      "message": "درست کیا گیا: طویل پروسیسنگ کے دوران PC کا رک جانا"
+   },
+   "w_prev_li2": {
+      "message": "درست کیا گیا: طویل ویڈیوز پر میموری کے مسائل"
+   },
+   "w_prev_li3": {
+      "message": "درست کیا گیا: سست روی اور غیر جوابدہ پلے بیک"
+   },
+   "w_prev_li4": {
+      "message": "نیا: اب بہت طویل ویڈیوز کی پروسیسنگ کی سہولت"
+   },
+   "w_prev_li5": {
+      "message": "عمومی کارکردگی اور استحکام میں بہتری"
+   },
+   "w_prev_li6": {
+      "message": "نیا: macOS سپورٹ"
+   },
+   "w_prev_updates": {
+      "message": "پچھلی اپ ڈیٹس"
+   },
+   "w_setup_title": {
+      "message": "2 مراحل میں شروع کریں"
+   },
+   "w_step1_cta": {
+      "message": "اپنے کمپیوٹر کے لیے ڈاؤن لوڈ کریں"
+   },
+   "w_step1_desc": {
+      "message": "ڈیسک ٹاپ ایپ موسیقی ہٹانے کا کام کرتی ہے۔ ایکسٹینشن صرف YouTube کے اندر سے اس سے رابطہ کرتی ہے۔"
+   },
+   "w_step1_title": {
+      "message": "PC مددگار ایپ انسٹال کریں"
+   },
+   "w_step2_cta": {
+      "message": "استعمال کا طریقہ دیکھیں →"
+   },
+   "w_step2_desc": {
+      "message": "2 منٹ کی رہنمائی جو YouTube پر ٹوگل اور کیش شدہ آڈیو کو منظم کرنے کا طریقہ دکھاتی ہے۔"
+   },
+   "w_step2_title": {
+      "message": "استعمال کرنا سیکھیں"
+   },
+   "w_support_closing": {
+      "message": "کیا آپ ہمارا ساتھ دیں گے؟"
+   },
+   "w_support_desc": {
+      "message": "Music Remover مسلم کمیونٹی کے لیے ایک چھوٹی ٹیم نے بنایا ہے۔ 5 ستارہ ریویو اور دوستوں کے ساتھ اشتراک آپ کے تصور سے زیادہ اثر رکھتے ہیں — یہی وہ ذریعہ ہے جس سے ہم دنیا بھر کے مزید مسلمانوں تک پہنچتے ہیں اور ایپ کو بہتر بناتے رہتے ہیں۔"
+   },
+   "w_support_rate": {
+      "message": "Chrome Web Store پر 5 ستارے دیں"
+   },
+   "w_support_share": {
+      "message": "کسی دوست کے ساتھ شیئر کریں"
+   },
+   "w_support_title": {
+      "message": "امت کے لیے ایک چھوٹی سی ٹیم کی محنت"
+   },
+   "w_update_li1": {
+      "message": "🔇 یوٹیوب اشتہارات خودکار طور پر خاموش کر دیتا ہے، تاکہ آپ ان کی موسیقی نہ سنیں۔"
+   },
+   "w_update_li2": {
+      "message": "ہر ویڈیو پر موسیقی خودکار طور پر ہٹا دیتا ہے — کسی کلک کی ضرورت نہیں۔"
+   },
+   "w_update_li3": {
+      "message": "موسیقی ختم ہونے تک ویڈیو کو روکے رکھتا ہے، تاکہ آپ اسے کبھی نہ سنیں۔"
+   },
+   "w_update_li4": {
+      "message": "زیادہ ہموار پلے بیک — پروسیسنگ کے دوران اشتہارات اب رکتے نہیں۔"
+   },
+   "w_update_title": {
+      "message": "v2.4.0 میں کیا نیا ہے"
+   },
+   "w_wait_body": {
+      "message": "اگر آپ کی کمپیوٹر کی ساتھی ایپ ابھی تک اپ ڈیٹ نہیں ہوئی، تو ہمارے اپ ڈیٹ کو سب تک پہنچنے میں چند گھنٹے لگ سکتے ہیں۔ براہ کرم تھوڑا انتظار کریں اور کچھ دیر بعد دوبارہ کوشش کریں — یہ صرف ایک بار کی محنت ہے۔ آپ کے صبر کا شکریہ۔ 🤲"
+   },
+   "w_wait_title": {
+      "message": "براہ کرم تھوڑا انتظار کریں — یہ صرف ایک بار کا انتظار ہے"
+   }
+}

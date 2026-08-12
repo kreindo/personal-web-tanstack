@@ -1,0 +1,39 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon-128.png",
+         "16": "icons/icon-16.png",
+         "48": "icons/icon-48.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Music Remover"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "https://www.youtube.com/*" ],
+      "run_at": "document_idle"
+   } ],
+   "default_locale": "en",
+   "description": "Remove & Mute Haram background music from Any YouTube videos & Audio, One click, fast & private Islamic halal AI filter for Muslims",
+   "homepage_url": "https://musicremover.org",
+   "host_permissions": [ "http://localhost:56348/*" ],
+   "icons": {
+      "128": "icons/icon-128.png",
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkFJ1DA4WcLXmUWLGqp2jp1UXjXGPXL0lBmFdidLSQFUpiDkYzKDTYXxqxNsTW5tiw5TowXhGq0nNZ1/n/rl5Vejg432YlcrUmOmMruq9kpIlai2YSP84y9mEoIdvkA1zwc15micKJD8JfhpStfmL1Xvo4cyfSWOxkC1Hd6zkpPNdkDC2dxAYF1/VHEHq3ikBnMIRmLR4G2GdroHfic5L2WsKV2l/tH7iQIxz6pTWyXx5J2F5Tc9ntcXw6zPReQtUGme7MrkoIX4oxL61C6HSbSjtUOr5EFWqXGKG4Rf+WdaChEgqjY5+dS9HXNNJmkezs4DQeilai2r4UT1cOth4mQIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "111",
+   "name": "Haram Music Remover. Superfast, Free & Unlimited",
+   "permissions": [ "activeTab", "alarms", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.4.0",
+   "web_accessible_resources": [ {
+      "matches": [ "https://www.youtube.com/*" ],
+      "resources": [ "icons/icon-16.png", "icons/icon-48.png", "icons/icon-128.png", "icons/toggle.png", "_locales/en/messages.json", "_locales/ar/messages.json", "_locales/ur/messages.json", "_locales/bn/messages.json", "_locales/hi/messages.json", "_locales/tr/messages.json", "_locales/id/messages.json" ]
+   } ]
+}
