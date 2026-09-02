@@ -25,6 +25,7 @@ if (!(Test-Path $chromePath)) { New-Item -Path $chromePath -Force | Out-Null }
 Set-ItemProperty -Path $chromePath -Name "101" -Value "enboaomnljigfhfjfoalacienlhjlfil;$chromeCrx" # Untrap Youtube
 Set-ItemProperty -Path $chromePath -Name "102" -Value "pganeibhckoanndahmnfggfoeofncnii;$chromeCrx" # Cold Turkey
 Set-ItemProperty -Path $chromePath -Name "103" -Value "ddkjiahejlhfcafbddmgiahcphecmpfh;$chromeCrx" # Ublock Origin
+Set-ItemProperty -Path $chromePath -Name "104" -Value "hemggnkjnacfmoohnnffbboobhhkannn;$chromeCrx" # Music Remover
 
 # --- 2. EDGE --- #untested
 # ID: jfphahkinplobmabmgjmjgflbhjjddeb
@@ -34,7 +35,7 @@ if (!(Test-Path $edgePath)) { New-Item -Path $edgePath -Force | Out-Null }
 Set-ItemProperty -Path $edgePath -Name "101" -Value "ngnefladcohhmmibccafkdbcijjoppdo;$edgeCrx" # Untrap Youtube
 Set-ItemProperty -Path $edgePath -Name "102" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;$edgeCrx" # Cold Turkey
 Set-ItemProperty -Path $edgePath -Name "103" -Value "odfafepnkmbhccpbejgmiehpchacaeak;$edgeCrx" # Ublock Origin
-
+Set-ItemProperty -Path $chromePath -Name "104" -Value "hemggnkjnacfmoohnnffbboobhhkannn;$chromeCrx" # Music Remover
 
 Write-Host "✅ Chrome, and Edge extensions forced via Policy." -ForegroundColor Green
 
