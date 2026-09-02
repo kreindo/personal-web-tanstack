@@ -20,15 +20,15 @@ function mrSubstitute(e, n, o) {
   let r = e;
   return (
     n &&
-      Object.keys(n).forEach((a) => {
-        const i = n[a];
-        let c = i && i.content;
-        typeof c == 'string' &&
-          (c = c.replace(/\$(\d+)/g, (m, f) =>
-            o[+f - 1] != null ? String(o[+f - 1]) : ''
-          )),
-          (r = r.replace(new RegExp('\\$' + a + '\\$', 'gi'), c || ''));
-      }),
+    Object.keys(n).forEach((a) => {
+      const i = n[a];
+      let c = i && i.content;
+      typeof c == 'string' &&
+        (c = c.replace(/\$(\d+)/g, (m, f) =>
+          o[+f - 1] != null ? String(o[+f - 1]) : ''
+        )),
+        (r = r.replace(new RegExp('\\$' + a + '\\$', 'gi'), c || ''));
+    }),
     (r = r.replace(/\$(\d+)/g, (a, i) =>
       o[+i - 1] != null ? String(o[+i - 1]) : ''
     )),
@@ -42,18 +42,18 @@ function t(e, ...n) {
   try {
     const r = chrome.i18n.getMessage(e, n.length ? n.map(String) : void 0);
     if (r) return r;
-  } catch {}
+  } catch { }
   return e;
 }
 async function mrLoadLang() {
   try {
     const e = await new Promise((a) => {
-        try {
-          chrome.storage.local.get(['mr_lang'], (i) => a(i && i.mr_lang));
-        } catch {
-          a(null);
-        }
-      }),
+      try {
+        chrome.storage.local.get(['mr_lang'], (i) => a(i && i.mr_lang));
+      } catch {
+        a(null);
+      }
+    }),
       n = (chrome.i18n.getUILanguage && chrome.i18n.getUILanguage()) || 'en';
     let o = (e || n || 'en').toLowerCase().split(/[-_]/)[0];
     if ((MR_SUPPORTED.includes(o) || (o = 'en'), o === 'en')) {
@@ -62,7 +62,7 @@ async function mrLoadLang() {
     }
     const r = await fetch(chrome.runtime.getURL(`_locales/${o}/messages.json`));
     r.ok && (MR_MSG = await r.json());
-  } catch {}
+  } catch { }
 }
 mrLoadLang();
 let autoRemove = !0,
@@ -76,29 +76,29 @@ try {
         typeof e.mr_auto_remove == 'boolean' &&
         (autoRemove = e.mr_auto_remove),
         e &&
-          typeof e.mr_pause_until_clean == 'boolean' &&
-          (pauseUntilClean = e.mr_pause_until_clean),
+        typeof e.mr_pause_until_clean == 'boolean' &&
+        (pauseUntilClean = e.mr_pause_until_clean),
         e && typeof e.mr_mute_ads == 'boolean' && (muteAds = e.mr_mute_ads);
     }
   );
-} catch {}
+} catch { }
 try {
   chrome.storage.onChanged.addListener((e, n) => {
     if (
       n === 'local' &&
       (e.mr_lang && mrLoadLang(),
-      e.mr_auto_remove && (autoRemove = !!e.mr_auto_remove.newValue),
-      e.mr_pause_until_clean &&
+        e.mr_auto_remove && (autoRemove = !!e.mr_auto_remove.newValue),
+        e.mr_pause_until_clean &&
         (pauseUntilClean = !!e.mr_pause_until_clean.newValue),
-      e.mr_mute_ads)
+        e.mr_mute_ads)
     ) {
       muteAds = !!e.mr_mute_ads.newValue;
       try {
         _syncAdMute();
-      } catch {}
+      } catch { }
     }
   });
-} catch {}
+} catch { }
 let appRunning = !1,
   currentVideoUrl = null,
   currentJobId = null,
@@ -141,13 +141,13 @@ async function healButton() {
     (appRunning ||
       ((await checkHealth()) &&
         ((appRunning = !0), observer || observePlayer())),
-    !!isYouTubeWatchUrl(location.href) &&
+      !!isYouTubeWatchUrl(location.href) &&
       !document.getElementById(BTN_ID) &&
       !document.querySelector('.ad-showing') &&
       document.querySelector('.ytp-right-controls') &&
       ((buttonInjected = !1),
-      injectButton(),
-      document.getElementById(BTN_ID) && !audioState))
+        injectButton(),
+        document.getElementById(BTN_ID) && !audioState))
   ) {
     const e = await checkHealth();
     e && updateButtonHints(e);
@@ -191,7 +191,7 @@ async function prioritizeAtPosition(e, n, o) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ job_id: e, position_s: n, playing: o !== !1 }),
     });
-  } catch {}
+  } catch { }
 }
 function _startPositionTimer(e) {
   e.positionTimer && clearInterval(e.positionTimer),
@@ -201,14 +201,14 @@ function _startPositionTimer(e) {
       !n ||
         !isFinite(n.currentTime) ||
         (prioritizeAtPosition(e.jobId, n.currentTime, !n.paused),
-        (e.lastSentPosition = n.currentTime));
+          (e.lastSentPosition = n.currentTime));
     }, PRIORITIZE_INTERVAL_MS));
 }
 function _stopPositionTimer(e) {
   if (e && e.positionTimer) {
     try {
       clearInterval(e.positionTimer);
-    } catch {}
+    } catch { }
     e.positionTimer = null;
   }
 }
@@ -292,10 +292,10 @@ function _updateChunkOverlay(e) {
   let r = document.getElementById(OVERLAY_ID);
   r ||
     ((r = document.createElement('div')),
-    (r.id = OVERLAY_ID),
-    getComputedStyle(o).position === 'static' &&
+      (r.id = OVERLAY_ID),
+      getComputedStyle(o).position === 'static' &&
       (o.style.position = 'relative'),
-    o.appendChild(r));
+      o.appendChild(r));
   const a = r.children;
   if (a.length !== e.chunks.length) {
     r.innerHTML = '';
@@ -358,9 +358,9 @@ const HOLD_MAX_WAIT_MS = 3e4;
 function _releaseHold(e, n) {
   if (
     ((e.holding = !1),
-    (e.holdSince = 0),
-    _hideHoldSpinner(),
-    !n || !e.video || !e.video.paused)
+      (e.holdSince = 0),
+      _hideHoldSpinner(),
+      !n || !e.video || !e.video.paused)
   )
     return;
   const o = e.video.play();
@@ -372,8 +372,8 @@ function _releaseHold(e, n) {
         !e.holdWaived &&
         !_coveredReady(e, e.video.currentTime) &&
         ((e.holding = !0),
-        e.holdSince || (e.holdSince = Date.now()),
-        _showHoldSpinner());
+          e.holdSince || (e.holdSince = Date.now()),
+          _showHoldSpinner());
     });
 }
 function _syncAdMute() {
@@ -384,9 +384,9 @@ function _syncAdMute() {
     ? (e._adMuted || ((e._adMutedPrev = n.muted), (e._adMuted = !0)),
       n.muted || ((e.muteGuard = !0), (n.muted = !0)))
     : e._adMuted &&
-      ((e._adMuted = !1),
+    ((e._adMuted = !1),
       n.muted !== e._adMutedPrev &&
-        ((e.muteGuard = !0), (n.muted = e._adMutedPrev)));
+      ((e.muteGuard = !0), (n.muted = e._adMutedPrev)));
 }
 function _syncHold() {
   const e = audioState;
@@ -401,7 +401,7 @@ function _syncHold() {
     else if ((_hideHoldSpinner(), n.paused && !e.userPaused))
       try {
         n.play();
-      } catch {}
+      } catch { }
     return;
   }
   const o = n.currentTime;
@@ -418,7 +418,7 @@ function _syncHold() {
     Array.isArray(r.chunks) &&
     r.chunks.length &&
     ((a = r.chunks.find((c) => c.start_s <= o && o < c.end_s)),
-    !a || a.status === 'failed')
+      !a || a.status === 'failed')
   ) {
     _releaseHold(e, !1);
     return;
@@ -430,7 +430,7 @@ function _syncHold() {
   }
   if (
     (e.holdWaived && ((e.holdWaived = !1), (e.holdWaivedKey = null)),
-    e.holding && e.holdSince && Date.now() - e.holdSince > HOLD_MAX_WAIT_MS)
+      e.holding && e.holdSince && Date.now() - e.holdSince > HOLD_MAX_WAIT_MS)
   ) {
     (e.holdWaived = !0), (e.holdWaivedKey = i), _releaseHold(e, !0);
     return;
@@ -440,7 +440,7 @@ function _syncHold() {
   ) {
     try {
       n.pause();
-    } catch {}
+    } catch { }
     _markSeekProcessing(o);
   }
   _showHoldSpinner();
@@ -454,7 +454,7 @@ function _showHoldSpinner() {
   if (!e) return;
   _ensureHoldSpinnerStyles(),
     getComputedStyle(e).position === 'static' &&
-      (e.style.position = 'relative');
+    (e.style.position = 'relative');
   const n = chrome.runtime.getURL('icons/icon-128.png'),
     o = document.createElement('div');
   (o.id = HOLD_SPINNER_ID),
@@ -512,8 +512,8 @@ function _setSegClass(e, n) {
     n === 'ready'
       ? e.classList.add('mr-ready')
       : n === 'processing'
-      ? e.classList.add('mr-processing')
-      : n === 'failed' && e.classList.add('mr-failed');
+        ? e.classList.add('mr-processing')
+        : n === 'failed' && e.classList.add('mr-failed');
 }
 function _fmtTime(e) {
   e = Math.max(0, Math.round(e));
@@ -551,20 +551,20 @@ async function updateButtonHints(e) {
   o && o.cached
     ? (setTtlDropdown({ cached: !0, ttl: o.ttl }),
       audioState ||
-        ((currentJobId = o.job_id),
+      ((currentJobId = o.job_id),
         (n.title = t('title_audio_ready')),
         o.kind === 'chunks'
           ? enterStreamingMode(o.job_id, currentVideoUrl)
           : await downloadAndPlay(o.job_id, currentVideoUrl)))
     : (setTtlDropdown({ cached: !1 }),
       audioState ||
-        (setBtnState('off'),
+      (setBtnState('off'),
         (n.title = t('title_remove_music')),
         autoRemove &&
-          appRunning &&
-          isYouTubeWatchUrl(currentVideoUrl) &&
-          _autoEngagedUrl !== currentVideoUrl &&
-          ((_autoEngagedUrl = currentVideoUrl),
+        appRunning &&
+        isYouTubeWatchUrl(currentVideoUrl) &&
+        _autoEngagedUrl !== currentVideoUrl &&
+        ((_autoEngagedUrl = currentVideoUrl),
           (_suppressToast = !0),
           onButtonClick())));
 }
@@ -575,8 +575,8 @@ function observePlayer() {
       (observerDebounce = setTimeout(() => {
         document.getElementById(BTN_ID) ||
           ((buttonInjected = !1),
-          injectButton(),
-          document.getElementById(BTN_ID) &&
+            injectButton(),
+            document.getElementById(BTN_ID) &&
             !audioState &&
             checkHealth().then((n) => {
               n && updateButtonHints(n);
@@ -667,9 +667,9 @@ function setBtnState(e) {
   const n = document.getElementById(BTN_ID);
   n &&
     (n.classList.remove('mr-state-off', 'mr-state-on', 'mr-state-loading'),
-    n.classList.add('mr-state-' + e),
-    n.setAttribute('aria-checked', e === 'on' ? 'true' : 'false'),
-    (n.disabled = e === 'loading'));
+      n.classList.add('mr-state-' + e),
+      n.setAttribute('aria-checked', e === 'on' ? 'true' : 'false'),
+      (n.disabled = e === 'loading'));
 }
 let preferredTtl = '3d';
 function setTtlDropdown({ cached: e, ttl: n }) {
@@ -885,21 +885,21 @@ function injectStyles() {
 async function onButtonClick() {
   const e = document.getElementById(BTN_ID);
   if (audioState) {
-    apiFetch('POST', '/cancel').catch(() => {});
+    apiFetch('POST', '/cancel').catch(() => { });
     const o = !!audioState.holding,
       r = audioState.video;
     if (
       (stopAudio(),
-      stopPolling(),
-      setJobActive(!1),
-      setBtnState('off'),
-      e && (e.title = t('title_remove_music')),
-      showSimpleToast(t('toast_original_restored')),
-      o && r && r.paused)
+        stopPolling(),
+        setJobActive(!1),
+        setBtnState('off'),
+        e && (e.title = t('title_remove_music')),
+        showSimpleToast(t('toast_original_restored')),
+        o && r && r.paused)
     )
       try {
-        r.play().catch(() => {});
-      } catch {}
+        r.play().catch(() => { });
+      } catch { }
     return;
   }
   const n = location.href;
@@ -925,7 +925,7 @@ async function onButtonClick() {
           if (a && !a.paused)
             try {
               a.pause();
-            } catch {}
+            } catch { }
         }
         showProcessingToast(0, 'starting'),
           enterStreamingMode(currentJobId, n),
@@ -969,7 +969,7 @@ async function doPoll(e, n) {
         setJobActive(!1),
         hideToast(),
         (!audioState || audioState.jobId !== e) &&
-          (await downloadAndPlay(e, n));
+        (await downloadAndPlay(e, n));
       const r = await lookupCache(n);
       r && r.cached && setTtlDropdown({ cached: !0, ttl: r.ttl });
     } else
@@ -995,7 +995,7 @@ function armCtxResume(e, n) {
         e.resume().then(() => {
           n && n();
         });
-      } catch {}
+      } catch { }
     document.removeEventListener('click', o, !0),
       document.removeEventListener('keydown', o, !0),
       document.removeEventListener('touchstart', o, !0);
@@ -1084,13 +1084,13 @@ function _setupAudioSession(e) {
     const u = r.video.playbackRate || 1;
     if (
       ((s.el.preservesPitch = !0),
-      s.el.playbackRate !== u && (s.el.playbackRate = u),
-      s.endS <= l || s.startS > l)
+        s.el.playbackRate !== u && (s.el.playbackRate = u),
+        s.endS <= l || s.startS > l)
     ) {
       if (!s.el.paused)
         try {
           s.el.pause();
-        } catch {}
+        } catch { }
       return;
     }
     const p = isFinite(s.el.duration) ? s.el.duration : s.endS - s.startS,
@@ -1098,15 +1098,15 @@ function _setupAudioSession(e) {
     if (Math.abs(s.el.currentTime - b) > 0.25)
       try {
         s.el.currentTime = b;
-      } catch {}
-    s.el.paused && s.el.play().catch(() => {});
+      } catch { }
+    s.el.paused && s.el.play().catch(() => { });
   }
   function y() {
     for (const s of r.chunks.values())
       if (s.el && !s.el.paused)
         try {
           s.el.pause();
-        } catch {}
+        } catch { }
   }
   function g(s) {
     const l = URL.createObjectURL(new Blob([s])),
@@ -1119,19 +1119,19 @@ function _setupAudioSession(e) {
     if (s.el) {
       try {
         s.el.pause();
-      } catch {}
+      } catch { }
       try {
         s.el.removeAttribute('src'), s.el.load();
-      } catch {}
+      } catch { }
     }
     if (s.node)
       try {
         s.node.disconnect();
-      } catch {}
+      } catch { }
     if (s.url)
       try {
         URL.revokeObjectURL(s.url);
-      } catch {}
+      } catch { }
     (s.el = null), (s.node = null), (s.url = null), (s.ready = !1);
   }
   function w(s, l) {
@@ -1140,12 +1140,12 @@ function _setupAudioSession(e) {
     !d ||
       d.el !== l ||
       ((d.ready = !0),
-      r.ctx.state !== 'suspended' &&
+        r.ctx.state !== 'suspended' &&
         !r.video.paused &&
         !isAdShowing() &&
         (_(d, r.video.currentTime, r.ctx.currentTime), f()),
-      R(),
-      _syncHold());
+        R(),
+        _syncHold());
   }
   function x(s, l, d) {
     const { el: u, node: p, url: b } = g(d);
@@ -1227,13 +1227,13 @@ function _setupAudioSession(e) {
     s && (s.title = t('title_click_restore')), _syncHold();
   }
   const T = () => {
-      h(), _syncHold();
-    },
+    h(), _syncHold();
+  },
     L = () => y(),
     $ = () => {
       r.jobId &&
         (prioritizeAtPosition(r.jobId, r.video.currentTime),
-        _markSeekProcessing(r.video.currentTime)),
+          _markSeekProcessing(r.video.currentTime)),
         v(),
         h(),
         _syncHold();
@@ -1264,8 +1264,8 @@ function _setupAudioSession(e) {
         m(),
         f(),
         r.lastManifest &&
-          !document.getElementById(OVERLAY_ID) &&
-          _updateChunkOverlay(r.lastManifest);
+        !document.getElementById(OVERLAY_ID) &&
+        _updateChunkOverlay(r.lastManifest);
     };
   return (
     e.addEventListener('play', T),
@@ -1332,11 +1332,11 @@ async function downloadAndPlay(e, n) {
     if (i)
       try {
         i.ctx.close();
-      } catch {}
+      } catch { }
     r() ||
       (stopAudio(),
-      setBtnState('off'),
-      showSimpleToast(t('toast_failed_load')));
+        setBtnState('off'),
+        showSimpleToast(t('toast_failed_load')));
   }
 }
 const MANIFEST_POLL_MS = 2e3,
@@ -1373,13 +1373,13 @@ async function enterStreamingMode(e, n) {
         fetchManifest(e),
       ]);
       (f = _), (h = y);
-    } catch {}
+    } catch { }
     if (audioState === i) {
       if (
         (f &&
           f.status === 'processing' &&
           updateProcessingToast(f.progress || 0, f.stage || 'downloading'),
-        f && f.status === 'failed')
+          f && f.status === 'failed')
       ) {
         _stopAudioInternal();
         return;
@@ -1391,8 +1391,8 @@ async function enterStreamingMode(e, n) {
             (i.chunks.has(g.idx) || i.addChunkSlot(g.idx, g.start_s, g.end_s));
         i.checkLookahead(), _syncAdMute(), _syncHold();
         const _ = h.chunks
-            .filter((g) => g.status === 'ready')
-            .every((g) => i.chunks.has(g.idx)),
+          .filter((g) => g.status === 'ready')
+          .every((g) => i.chunks.has(g.idx)),
           y = f && f.status === 'completed';
         if (_ && y) {
           i.manifestTimer = null;
@@ -1427,42 +1427,42 @@ function _stopAudioInternal() {
   if (a)
     try {
       clearTimeout(a);
-    } catch {}
+    } catch { }
   if (
     (_stopPositionTimer(audioState),
-    o &&
+      o &&
       r &&
       (o.removeEventListener('play', r.onPlay),
-      o.removeEventListener('pause', r.onPause),
-      o.removeEventListener('seeked', r.onSeeked),
-      o.removeEventListener('ended', r.onEnded),
-      o.removeEventListener('volumechange', r.onVolume),
-      o.removeEventListener('timeupdate', r.onTimeUpdate),
-      o.removeEventListener('ratechange', r.onRate)),
-    n)
+        o.removeEventListener('pause', r.onPause),
+        o.removeEventListener('seeked', r.onSeeked),
+        o.removeEventListener('ended', r.onEnded),
+        o.removeEventListener('volumechange', r.onVolume),
+        o.removeEventListener('timeupdate', r.onTimeUpdate),
+        o.removeEventListener('ratechange', r.onRate)),
+      n)
   )
     for (const i of n.values()) {
       if (i.el) {
         try {
           i.el.pause();
-        } catch {}
+        } catch { }
         try {
           i.el.removeAttribute('src'), i.el.load();
-        } catch {}
+        } catch { }
       }
       if (i.node)
         try {
           i.node.disconnect();
-        } catch {}
+        } catch { }
       if (i.url)
         try {
           URL.revokeObjectURL(i.url);
-        } catch {}
+        } catch { }
     }
   if (e)
     try {
       e.close();
-    } catch {}
+    } catch { }
   o && (o.muted = !1), (audioState = null);
 }
 function stopAudio() {
@@ -1489,11 +1489,11 @@ function showRetryToast(e) {
     (n.innerHTML = `<div class="mr-toast-msg">${esc(e)}</div>
     <div class="mr-toast-btns">
       <button class="mr-toast-btn" id="mr-toast-dismiss">${esc(
-        t('btn_dismiss')
-      )}</button>
+      t('btn_dismiss')
+    )}</button>
       <button class="mr-toast-btn mr-primary" id="mr-toast-retry">${esc(
-        t('btn_try_again')
-      )}</button>
+      t('btn_try_again')
+    )}</button>
     </div>`),
     document.body.appendChild(n),
     n.querySelector('#mr-toast-dismiss').addEventListener('click', hideToast),
@@ -1519,17 +1519,17 @@ function showProcessingToast(e, n) {
     </div>
     <div class="mr-toast-progress">
       <span id="mr-stage">${esc(
-        stageText(n)
-      )}</span> &bull; <span id="mr-pct">${e}%</span>
+      stageText(n)
+    )}</span> &bull; <span id="mr-pct">${e}%</span>
     </div>
     <div class="mr-toast-bar-wrap"><div class="mr-toast-bar" id="mr-bar" style="width:${e}%"></div></div>
     <div class="mr-toast-btns" style="margin-top:10px">
       <button class="mr-toast-btn" id="mr-toast-hide">${esc(
-        t('btn_hide')
-      )}</button>
+      t('btn_hide')
+    )}</button>
       <button class="mr-toast-btn" id="mr-toast-cancel">${esc(
-        t('btn_cancel')
-      )}</button>
+      t('btn_cancel')
+    )}</button>
     </div>`),
     document.body.appendChild(o),
     setTimeout(() => {
@@ -1543,7 +1543,7 @@ function showProcessingToast(e, n) {
       stopPolling(), hideToast(), setJobActive(!1), setBtnState('off');
       try {
         await apiFetch('POST', '/cancel');
-      } catch {}
+      } catch { }
     });
 }
 function updateProcessingToast(e, n) {
@@ -1564,11 +1564,11 @@ function showConflictToast(e) {
     <div class="mr-toast-msg">${esc(t('toast_conflict'))}</div>
     <div class="mr-toast-btns">
       <button class="mr-toast-btn" id="mr-conflict-keep">${esc(
-        t('btn_keep_running')
-      )}</button>
+      t('btn_keep_running')
+    )}</button>
       <button class="mr-toast-btn mr-primary" id="mr-conflict-stop">${esc(
-        t('btn_stop_process')
-      )}</button>
+      t('btn_stop_process')
+    )}</button>
     </div>`),
     document.body.appendChild(n),
     n.querySelector('#mr-conflict-keep').addEventListener('click', hideToast),
@@ -1582,12 +1582,12 @@ function showConflictToast(e) {
         o.job &&
           o.job.job_id &&
           ((currentJobId = o.job.job_id),
-          showProcessingToast(
-            o.job.progress || 0,
-            o.job.stage || 'downloading'
-          ),
-          enterStreamingMode(currentJobId, e),
-          startPolling(currentJobId, e));
+            showProcessingToast(
+              o.job.progress || 0,
+              o.job.stage || 'downloading'
+            ),
+            enterStreamingMode(currentJobId, e),
+            startPolling(currentJobId, e));
       } catch (o) {
         setBtnState('off'), showSimpleToast(t('toast_error', o.message));
       }
@@ -1605,19 +1605,19 @@ function showPermissionToast() {
       <p class="mr-toast-help">
         ${t('perm_step2')}
         &nbsp;<a href="https://musicremover.org/how-to-use#common_issue" target="_blank" rel="noopener noreferrer" style="color:#fbbf24;font-weight:600">${esc(
-          t('perm_see_fix')
-        )}</a>
+      t('perm_see_fix')
+    )}</a>
       </p>
       <p class="mr-toast-secondary">
         <a href="https://musicremover.org/how-to-use" target="_blank" rel="noopener noreferrer">${esc(
-          t('perm_full_guide')
-        )}</a>
+      t('perm_full_guide')
+    )}</a>
       </p>
     </div>
     <div class="mr-toast-btns">
       <button class="mr-toast-btn mr-primary" id="mr-toast-dismiss">${esc(
-        t('btn_got_it')
-      )}</button>
+      t('btn_got_it')
+    )}</button>
     </div>`),
     document.body.appendChild(e),
     e.querySelector('#mr-toast-dismiss').addEventListener('click', hideToast);
@@ -1633,14 +1633,14 @@ function showUpdateRequiredToast() {
       <p class="mr-toast-help">${esc(t('update_req_body'))}</p>
       <p class="mr-toast-secondary">
         <a href="http://127.0.0.1:56348/update" target="_blank" rel="noopener noreferrer">${esc(
-          t('update_req_link')
-        )}</a>
+      t('update_req_link')
+    )}</a>
       </p>
     </div>
     <div class="mr-toast-btns">
       <button class="mr-toast-btn mr-primary" id="mr-toast-dismiss">${esc(
-        t('btn_got_it')
-      )}</button>
+      t('btn_got_it')
+    )}</button>
     </div>`),
     document.body.appendChild(e),
     e.querySelector('#mr-toast-dismiss').addEventListener('click', hideToast);
@@ -1676,7 +1676,7 @@ async function apiFetch(e, n, o) {
     i.status = a.status;
     try {
       i.body = await a.json();
-    } catch {}
+    } catch { }
     throw i;
   }
   return a.json();
@@ -1688,14 +1688,14 @@ async function onNavigate() {
     o = isYouTubeWatchUrl(e);
   if (
     ((currentVideoUrl = e),
-    (_autoEngagedUrl = null),
-    n && audioState && apiFetch('POST', '/cancel').catch(() => {}),
-    stopPolling(),
-    stopAudio(),
-    hideToast(),
-    setJobActive(!1),
-    (buttonInjected = !1),
-    !o)
+      (_autoEngagedUrl = null),
+      n && audioState && apiFetch('POST', '/cancel').catch(() => { }),
+      stopPolling(),
+      stopAudio(),
+      hideToast(),
+      setJobActive(!1),
+      (buttonInjected = !1),
+      !o)
   )
     return;
   setBtnState('off'), setTtlDropdown({ cached: !1 });
@@ -1703,8 +1703,8 @@ async function onNavigate() {
   r && (r.title = t('title_remove_music')),
     n
       ? checkHealth().then((a) => {
-          a && updateButtonHints(a);
-        })
+        a && updateButtonHints(a);
+      })
       : await activate();
 }
 window.addEventListener('yt-navigate-finish', onNavigate),

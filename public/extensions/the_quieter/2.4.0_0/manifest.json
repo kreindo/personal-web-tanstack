@@ -17,7 +17,7 @@
       "run_at": "document_idle"
    } ],
    "default_locale": "en",
-   "description": "Remove & Mute Haram background music from Any YouTube videos & Audio, One click, fast & private Islamic halal AI filter for Muslims",
+   "description": "Remove & Mute Haram background music from YouTube videos & Audio",
    "homepage_url": "https://musicremover.org",
    "host_permissions": [ "http://localhost:56348/*" ],
    "icons": {
