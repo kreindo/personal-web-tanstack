@@ -35,7 +35,7 @@ if (!(Test-Path $edgePath)) { New-Item -Path $edgePath -Force | Out-Null }
 Set-ItemProperty -Path $edgePath -Name "101" -Value "ngnefladcohhmmibccafkdbcijjoppdo;$edgeCrx" # Untrap Youtube
 Set-ItemProperty -Path $edgePath -Name "102" -Value "jfphahkinplobmabmgjmjgflbhjjddeb;$edgeCrx" # Cold Turkey
 Set-ItemProperty -Path $edgePath -Name "103" -Value "odfafepnkmbhccpbejgmiehpchacaeak;$edgeCrx" # Ublock Origin
-Set-ItemProperty -Path $chromePath -Name "104" -Value "hemggnkjnacfmoohnnffbboobhhkannn;$chromeCrx" # Music Remover
+Set-ItemProperty -Path $edgePath -Name "104" -Value "hemggnkjnacfmoohnnffbboobhhkannn;$edgeCrx" # Music Remover
 
 Write-Host "✅ Chrome, and Edge extensions forced via Policy." -ForegroundColor Green
 
