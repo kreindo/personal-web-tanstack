@@ -56,7 +56,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <ConvexProvider>
           {/* <Header /> */}
-          <CardNav logo='test' items={[
+          {/* <CardNav logo='test' baseColor='#c9db00' items={[
             {
               label: 'About',
               bgColor: 'bg-cyan-500',
@@ -91,7 +91,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 },
               ],
             }
-          ]}/>
+          ]}/> */}
           {children}
           <TanStackDevtools
             config={{

@@ -193,7 +193,7 @@ async function refresh() {
       clearProgress(),
       setHidden(els.cardVideo, !0),
       setHidden(els.cardUpdate, !0),
-      setHidden(els.cardDownload, !1),
+      setHidden(els.cardDownload, !0), // temp condition flip. default = !1
       renderOfflineState();
     return;
   }

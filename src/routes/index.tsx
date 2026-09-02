@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black">
-      <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
+      <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
         <PixelBlast
           color='gray'
           autoPauseOffscreen
@@ -51,7 +51,7 @@ function App() {
           antialias
         />
       </div>
-      
+
       <section className="relative py-36 px-6 text-center overflow-hidden">
         <div className="relative max-w-5xl mx-auto">
           <div className="flex flex-col items-center justify-center gap-6 mb-6">
@@ -60,29 +60,29 @@ function App() {
               alt="TanStack Logo"
               className="size-32 border-4 border-cyan-500 rounded-full"
             /> */}
-            <h1 className="font-bbh text-6xl md:text-7xl font-black text-white">
-              <span className="text-gray-300">Welcome to my little corner in the internet</span>
+            <h1 className="font-bbh text-1xl md:text-2xl font-black text-white">
+              <span draggable="false" className="text-white font-sans animate animate-spin">o</span>
             </h1>
           </div>
-          <div className="flex flex-col items-center gap-4">
+          {/* <div className="flex flex-col items-center gap-4">
             <div
               className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
             >
               Contact me
             </div>
-            </div>
-            
-            <div>
-            <p className="text-gray-400 text-sm mt-2">
+          </div> */}
+
+          <div>
+            {/* <p className="text-gray-400 text-sm mt-2">
               Let's build something amazing together!
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
 
 
       <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Link
               key={index}
@@ -98,7 +98,7 @@ function App() {
               </p>
             </Link>
           ))}
-        </div>
+        </div> */}
       </section>
     </div>
   )

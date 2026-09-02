@@ -34,9 +34,9 @@ function RouteComponent() {
           </CardHeader>
           <CardContent>
             <ul>
-              {/* {data.map((report) => (
+              {data.map((report) => (
                 <li key={report.id}>{report.name}</li>
-              ))} */}
+              ))}
             </ul>
           </CardContent>
           <CardFooter>

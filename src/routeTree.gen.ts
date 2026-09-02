@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoConvexRouteImport } from './routes/demo/convex'
 import { Route as AppSantriReportsRouteImport } from './routes/app/santri-reports'
+import { Route as ApiSantriReportsRouteImport } from './routes/api/santri-reports'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
 import { Route as DemoApiTqTodosRouteImport } from './routes/demo/api.tq-todos'
@@ -41,6 +42,11 @@ const DemoConvexRoute = DemoConvexRouteImport.update({
 const AppSantriReportsRoute = AppSantriReportsRouteImport.update({
   id: '/app/santri-reports',
   path: '/app/santri-reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSantriReportsRoute = ApiSantriReportsRouteImport.update({
+  id: '/api/santri-reports',
+  path: '/api/santri-reports',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
@@ -91,6 +97,7 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/santri-reports': typeof ApiSantriReportsRoute
   '/app/santri-reports': typeof AppSantriReportsRoute
   '/demo/convex': typeof DemoConvexRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -106,6 +113,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/santri-reports': typeof ApiSantriReportsRoute
   '/app/santri-reports': typeof AppSantriReportsRoute
   '/demo/convex': typeof DemoConvexRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -122,6 +130,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/santri-reports': typeof ApiSantriReportsRoute
   '/app/santri-reports': typeof AppSantriReportsRoute
   '/demo/convex': typeof DemoConvexRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/api/santri-reports'
     | '/app/santri-reports'
     | '/demo/convex'
     | '/demo/tanstack-query'
@@ -154,6 +164,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/santri-reports'
     | '/app/santri-reports'
     | '/demo/convex'
     | '/demo/tanstack-query'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/api/santri-reports'
     | '/app/santri-reports'
     | '/demo/convex'
     | '/demo/tanstack-query'
@@ -185,6 +197,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiSantriReportsRoute: typeof ApiSantriReportsRoute
   AppSantriReportsRoute: typeof AppSantriReportsRoute
   DemoConvexRoute: typeof DemoConvexRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
@@ -227,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/app/santri-reports'
       fullPath: '/app/santri-reports'
       preLoaderRoute: typeof AppSantriReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/santri-reports': {
+      id: '/api/santri-reports'
+      path: '/api/santri-reports'
+      fullPath: '/api/santri-reports'
+      preLoaderRoute: typeof ApiSantriReportsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/start/server-funcs': {
@@ -297,6 +317,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiSantriReportsRoute: ApiSantriReportsRoute,
   AppSantriReportsRoute: AppSantriReportsRoute,
   DemoConvexRoute: DemoConvexRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
