@@ -26,6 +26,7 @@ Set-ItemProperty -Path $chromePath -Name "101" -Value "enboaomnljigfhfjfoalacien
 Set-ItemProperty -Path $chromePath -Name "102" -Value "pganeibhckoanndahmnfggfoeofncnii;$chromeCrx" # Cold Turkey
 Set-ItemProperty -Path $chromePath -Name "103" -Value "ddkjiahejlhfcafbddmgiahcphecmpfh;$chromeCrx" # Ublock Origin
 Set-ItemProperty -Path $chromePath -Name "104" -Value "hemggnkjnacfmoohnnffbboobhhkannn;$chromeCrx" # Music Remover
+Set-ItemProperty -Path $chromePath -Name "105" -Value "pdpladncbpmoeepkkebcpncefanffofj;$chromeCrx" # Classic Google Search
 
 # --- 2. EDGE --- #untested
 # ID: jfphahkinplobmabmgjmjgflbhjjddeb
