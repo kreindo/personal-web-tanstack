@@ -11,6 +11,7 @@ import PixelBlast from "../components/PixelBlast"
 
 export const Route = createFileRoute('/')({ component: App })
 
+/** Renders the home page with an animated pixel background and a spinning "o". */
 function App() {
   const features = [
     {

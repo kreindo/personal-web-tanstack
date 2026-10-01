@@ -47,6 +47,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   shellComponent: RootDocument,
 })
 
+/**
+ * Wraps route content in the HTML document with Convex context, route head
+ * content, router and query devtools, and application scripts.
+ */
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

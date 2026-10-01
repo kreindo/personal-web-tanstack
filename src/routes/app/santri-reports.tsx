@@ -16,6 +16,15 @@ export const Route = createFileRoute('/app/santri-reports')({
 })
 
 
+/**
+ * Fetches `/api/santri-reports` and renders names from an expected array of
+ * reports with `id` and `name` fields. Shows a loading indicator while pending
+ * and an error message for query failures, including fetch and JSON parse errors.
+ * HTTP status and response shape are not validated.
+ *
+ * @throws {TypeError} If rendering encounters data without a callable `map`
+ * method or a null or undefined report; these errors are not caught here.
+ */
 function RouteComponent() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['santri-reports'],
