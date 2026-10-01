@@ -9,7 +9,7 @@ $exeLocation = "$env:TEMP\Cold Turkey Blocker.exe"
 try {
     Invoke-WebRequest $exeDownloadURL -OutFile $exeLocation -ErrorAction Stop
 } catch {
-    Write-Host "❌ Failed to download replacement EXE" -ForegroundColor Red
+    Write-Host "[ERR] Failed to download replacement EXE" -ForegroundColor Red
     Exit
 }
 

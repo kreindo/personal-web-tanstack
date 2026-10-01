@@ -47,6 +47,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   shellComponent: RootDocument,
 })
 
+/**
+ * Wraps route content in the HTML document with Convex context, route head
+ * content, router and query devtools, and application scripts.
+ */
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -56,7 +60,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <ConvexProvider>
           {/* <Header /> */}
-          <CardNav logo='test' items={[
+          {/* <CardNav logo='test' baseColor='#c9db00' items={[
             {
               label: 'About',
               bgColor: 'bg-cyan-500',
@@ -91,7 +95,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 },
               ],
             }
-          ]}/>
+          ]}/> */}
           {children}
           <TanStackDevtools
             config={{

@@ -18,7 +18,7 @@
     "message": "Music Remover agent not running"
   },
   "bg_title": {
-    "message": "Music Remover"
+    "message": "Pestek Music Remover"
   },
   "bg_update_available": {
     "message": "Music Remover — update v$VER$ available",
@@ -149,7 +149,7 @@
     "message": "Free download"
   },
   "get_desktop_app": {
-    "message": "Get the free desktop app"
+    "message": "Install desktop app"
   },
   "how_it_works": {
     "message": "How it works"
@@ -454,7 +454,7 @@
     "message": "Thank you for installing Music Remover"
   },
   "w_hero_title_update": {
-    "message": "Haram Music Remover. Superfast, Free & Unlimited"
+    "message": "Music Remover"
   },
   "w_howto_cta": {
     "message": "See the 2-minute setup guide →"

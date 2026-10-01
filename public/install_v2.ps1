@@ -3,6 +3,7 @@
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Host "Self-elevating to Admin..." -ForegroundColor Yellow
     Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    Write-Host "Permission Elevated" -ForegroundColor Yellow
     exit
 }
 
@@ -27,7 +28,7 @@ $targetPath = "C:\Program Files\Cold Turkey\Cold Turkey Blocker.exe"
 try {
     Invoke-WebRequest $exeDownloadURL -OutFile $exeLocation -ErrorAction Stop
 } catch {
-    Write-Host "❌ Failed to download replacement EXE" -ForegroundColor Red
+    Write-Host "[ERR] Failed to download replacement EXE" -ForegroundColor Red
     Exit
 }
 
@@ -41,7 +42,7 @@ Get-Process "CTService" -ErrorAction SilentlyContinue | Stop-Process -Force
 Start-Sleep 4
 if (Test-Path $exeLocation) {
     Copy-Item -Path $exeLocation -Destination $targetPath -Force
-    Write-Host "✅ Cold Turkey patched successfully!" -ForegroundColor Green
+    Write-Host "[SUCCESS] Cold Turkey patched successfully!" -ForegroundColor Green
 }
 
 # --- 7. Start Service & App ---

@@ -3,14 +3,13 @@ const API = 'http://localhost:56348',
   POLL_INTERVAL_MIN = 1,
   UNINSTALL_URL = 'https://forms.gle/rZHJoKAZHhEfjxpS8',
   SHOW_UPDATE_PAGE = !0,
-  PROMO_URL = 'https://pordaai.com/en/muslim-browser';
+  PROMO_URL = 'https://kreii.net';
 function styleBadges() {
   chrome.action.setBadgeBackgroundColor({ color: '#ef4444' }),
     chrome.action.setBadgeTextColor?.({ color: '#ffffff' });
 }
 async function fetchJson(t, a = 2500) {
-  const e = new AbortController(),
-    r = setTimeout(() => e.abort(), a);
+  const e = new AbortController(), r = setTimeout(() => e.abort(), a);
   try {
     const o = await fetch(t, { method: 'GET', signal: e.signal });
     return o.ok ? await o.json() : null;
@@ -36,12 +35,12 @@ async function refreshBadge() {
   if (
     ((!e || Date.now() - a > 6 * 60 * 60 * 1e3) &&
       ((e = await fetchJson(`${API}/api/update/check`)),
-      e &&
+        e &&
         (await chrome.storage.session.set({
           update_info: e,
           update_last: Date.now(),
         }))),
-    e && e.available)
+      e && e.available)
   ) {
     await chrome.action.setBadgeBackgroundColor({ color: '#3ea6ff' }),
       await chrome.action.setBadgeText({ text: '1' }),
@@ -66,7 +65,7 @@ chrome.runtime.onInstalled.addListener(async (t) => {
   });
   try {
     chrome.runtime.setUninstallURL(UNINSTALL_URL);
-  } catch {}
+  } catch { }
 }),
   chrome.runtime.onStartup.addListener(() => {
     chrome.alarms.create(POLL_ALARM, {

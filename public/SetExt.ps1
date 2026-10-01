@@ -1,5 +1,5 @@
 # --- Browser setup ---
-Write-Host "🛡️ Force-installing browser extensions..." -ForegroundColor Cyan
+Write-Host "[COMMAND] Installing browser extensions..." -ForegroundColor Cyan
 
 # --- Block Extension Install ---
 # This policy prevents users from removing or disabling extensions. Only an administrator can remove them.
